@@ -34,9 +34,6 @@ tags:
 **Polygon**
 ![akpolygon](/img/in-post/post-csgo-weapons/ak47_in_3dsmax.png)
 
-**UV Overlay (Texturing)**
-![aktexture](/img/in-post/post-csgo-weapons/ak47.bmp)
-
 **Final Render with Lumination**
 ![akrender](/img/in-post/post-csgo-weapons/ak47_in_photoshop_72dpi_bicubic.jpg)
 
@@ -44,9 +41,6 @@ tags:
 
 **Polygon**
 ![m4polygon](/img/in-post/post-csgo-weapons/m4a1_in_3dsmax.png)
-
-**UV Overlay (Texturing)**
-![m4texture](/img/in-post/post-csgo-weapons/rif_m4a1.bmp)
 
 **Final Render with Lumination**
 ![m4render](/img/in-post/post-csgo-weapons/m4a1_in_photoshop_72dpi_bicubic.jpg)
@@ -56,9 +50,6 @@ tags:
 **Polygon**
 ![awppolygon](/img/in-post/post-csgo-weapons/awp_in_3dsmax.png)
 
-**UV Overlay (Texturing)**
-![awptexture](/img/in-post/post-csgo-weapons/awp.bmp)
-
 **Final Render with Lumination**
 ![awprender](/img/in-post/post-csgo-weapons/awp_in_photoshop_72dpi_bicubic.jpg)
 
@@ -66,9 +57,6 @@ tags:
 
 **Polygon**
 ![deaglepolygon](/img/in-post/post-csgo-weapons/deagle_in_3dsmax.png)
-
-**UV Overlay (Texturing)**
-![deagletexture](/img/in-post/post-csgo-weapons/pist_deagle.bmp)
 
 **Final Render with Lumination**
 ![deaglerender](/img/in-post/post-csgo-weapons/deagle_in_photoshop_72dpi_bicubic.jpg)
