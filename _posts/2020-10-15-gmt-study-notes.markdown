@@ -23,13 +23,13 @@ tags:
 
 **Preface**
 
-These techniques aim to improve your working efficiency of producing figures with *Generic Mapping Tools*. Although the document uses GMT 4 for demonstrations, it is not difficult for readers to follow the ideas and rewrite them in GMT 5 or higher. The author reserves the copyright of the figures in the examples. The full scripts for producing these figures will not be shared.
+These techniques aim to improve your working efficiency of producing figures with *Generic Mapping Tools*. Although the document uses GMT 4 for demonstrations, it is not difficult for readers to follow the ideas and rewrite them in GMT 5 or higher. The author reserves the copyright of the figures in the examples. Full scripts for producing these figures will not be released to the public.
 
 ### Preparatory knowledge
 
 **Syntax incompatibilities**
 
-Since there is no inheritance relationship between GMT 4 and GMT 5, preferably install both versions, do not try to modify a GMT 4 script to make it work on GMT 5, vice versa. It is a waste of time and sometimes unattainable. Moreover, it is not a good idea to switch on the Compatibility Mode of GMT 5, either. Firstly, turning on the Compatibility Mode would result in the co-existence of GMT 4 syntax and GMT 5 syntax in the same script, which is not a good thing. Secondly, there are always problems to make a GMT 4 script run in GMT 5. The Compatibility Mode does not solve the problems as you expected.
+Since there is no inheritance relationship between GMT 4 and GMT 5, preferably install both versions, do not try to modify a GMT 4 script to make it work on GMT 5, vice versa. It is a waste of time and sometimes unattainable. Moreover, it is not a good idea to switch on the *Compatibility Mode* of GMT 5, either. Firstly, turning on the Compatibility Mode would result in the co-existence of GMT 4 syntax and GMT 5 syntax in the same script, which is not good practice. Secondly, there are always problems to make a GMT 4 script run in GMT 5. The Compatibility Mode does not solve the problems as you expected.
 
 Here is a list of page settings that only exist in GMT 4 and could raise warnings in GMT 5 even with Compatibility Mode on:
 ```
@@ -99,7 +99,7 @@ If you prefer to use the *Portrait Mode* to create a plot, use
 ```bash
 gmtset PAGE_ORIENTATION portrait
 ```
-to specify the page orientation. Make sure these lines appear after cleaning the GMT configurations. They are equivalent to using a `-P` argument for each plotting command. Using the Portrait Mode is much more convenient than using the \textsf{-P} argument many times.
+to specify the page orientation. Make sure these lines appear after cleaning the GMT configurations. They are equivalent to using a `-P` argument for each plotting command. Using the Portrait Mode is much more convenient than using the `-P` argument many times.
 
 ### Advanced techniques
 
@@ -125,7 +125,7 @@ somewhere at the beginning of the script; then, use
 ```
 to guide each plotting command. This will write the figure into `example.ps` instead of `example.gmt.ps`.
 
-For filenames containing multiple dots, only the last extension is treated as the effective file extension, as illustrated in the flow chart below:
+For filenames containing multiple dots, only the last extension is treated as the "real" file extension, as illustrated in the flow chart below:
 ```bash
 ## e.g., $0 = ex.ample.gmt
 ## --> $file = ex.ample
