@@ -14,11 +14,13 @@ tags:
     - Terminal
 ---
 
-Timeline
+**Timeline**
 * `2017-02-01`: created
 * `2017-02-20`: peer reviewed by Sabber Ahamed and Chunyu Liu
 * `2020-10-15`: hosted on GitHub and rendered as Jekyll pages
+
 ---
+
 **Preface**
 
 These techniques aim to improve your working efficiency of producing figures with *Generic Mapping Tools*. Although the document uses GMT 4 for demonstrations, it is not difficult for readers to follow the ideas and rewrite them in GMT 5 or higher. The author reserves the copyright of the figures in the examples. The full scripts for producing these figures will not be shared.
@@ -165,6 +167,7 @@ echo "Done."
 to convert the file to PNG using a tight BoundingBox and rotating it back to normal orientation in case it was in Landscape mode. In GMT 5, `ps2raster` can also be replaced by `psconvert` for the same purpose.
 
 ---
+
 **Appendix**
 
 `grdcontour` vs. `pscontour`
