@@ -8,7 +8,7 @@ header-img: "img/home-bg.jpg"
 catalog: true
 tags:
     - bash
-    - GMT
+    - scripting
     - Generic Mapping Tools
     - OS X
     - Terminal
@@ -18,7 +18,7 @@ Timeline
 * `2017-02-01`: created
 * `2017-02-20`: peer reviewed by Sabber Ahamed and Chunyu Liu
 * `2020-10-15`: hosted on GitHub and rendered as Jekyll pages
-
+---
 **Preface**
 
 These techniques aim to improve your working efficiency of producing figures with *Generic Mapping Tools*. Although the document uses GMT 4 for demonstrations, it is not difficult for readers to follow the ideas and rewrite them in GMT 5 or higher. The author reserves the copyright of the figures in the examples. The full scripts for producing these figures will not be shared.
@@ -103,9 +103,7 @@ to specify the page orientation. Make sure these lines appear after cleaning the
 
 **Avoid hard-coded filenames**
 
-In a GMT script, the output filename can be either specified explicitly or through a predefined variable implicitly to guide each plotting command. Doing this explicitly requires that the filename must be consistent throughout the script. Inconsistent filenames always result in broken PostScript documents because of making a mistake.
-
-In addition to saving the filename in a variable as one of the feasible solutions, we are looking for a method that outputs the figure into a file with the same name as your script so that you will no longer be bothered.
+In a GMT script, the output filename can be either specified explicitly or through a predefined variable implicitly to guide each plotting command. Doing this explicitly requires that the filename must be consistent throughout the script. Inconsistent filenames always result in broken PostScript documents because of making a mistake. In addition to saving the filename in a variable as one of the feasible solutions, we are looking for a method that outputs the figure into a file with the same name as your script so that you will no longer be bothered.
 
 To do this elegantly, consider introducing a little bit usage of bash variables. Suppose a script is named `example.gmt`, and you would like to guide each GMT command to `example.ps`. A preliminary attempt could be
 ```bash
@@ -123,7 +121,7 @@ somewhere at the beginning of the script; then, use
 ```bash
 > $filename    # >> $filename for writing to open files
 ```
-to guide each plotting command. This will write your figure into \textsf{example.ps} instead of \textsf{example.gmt.ps}.
+to guide each plotting command. This will write the figure into `example.ps` instead of `example.gmt.ps`.
 
 For filenames containing multiple dots, only the last extension is treated as the effective file extension, as illustrated in the flow chart below:
 ```bash
@@ -165,6 +163,7 @@ open $file.png
 echo "Done."
 ```
 to convert the file to PNG using a tight BoundingBox and rotating it back to normal orientation in case it was in Landscape mode. In GMT 5, `ps2raster` can also be replaced by `psconvert` for the same purpose.
+
 ---
 **Appendix**
 
@@ -177,7 +176,7 @@ echo -8000 255 15 255 -7000 255 15 255 > twallnew.cpt
 echo -7000 255 15 255 -6000 255 75 255 >> twallnew.cpt
 echo -6000 255 75 255 -5000 255 75 225 >> twallnew.cpt
 ```
-<sup>[1]</sup>from Jyr-Ching HU, Department of Geosciences, National Taiwan University
+[1] from Jyr-Ching HU, Department of Geosciences, National Taiwan University
 
 Using the RGB system, the format of the cpt-file is:
 ```
