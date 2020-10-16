@@ -174,8 +174,8 @@ to convert the file to PNG using a tight BoundingBox and rotating it back to nor
 
 To fill the spaces with colors in between contour lines, a `-C` option appended to `pscontour` specifying a `*.cpt` file is needed. There are multiple ways of creating color palette tables, manually or automatically. When the range of data is clear, `makecpt` is a way to do it manually; `xyz2grd` with `grd2cpt` creates a color palette table automatically according to the maximum and minimum values in the data. Furthermore, creating a text file and entering a table from scratch is even possible, as an example<sup>[1]</sup> shows:
 ```bash
-echo Getting color palette table file...
-echo -8000 255 15 255 -7000 255 15 255 > twallnew.cpt
+echo "Getting color palette table file..."
+echo -8000 255 15 255 -7000 255 15 255  > twallnew.cpt
 echo -7000 255 15 255 -6000 255 75 255 >> twallnew.cpt
 echo -6000 255 75 255 -5000 255 75 225 >> twallnew.cpt
 ```
