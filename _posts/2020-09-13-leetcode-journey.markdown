@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Solutions to LeetCode in Java"
-subtitle:   "A summary about people's stupidness in Geophysics Major"
+subtitle:   "A criticism about people's lack of common-sense"
 date:       2020-09-13 12:00:00
 author:     "__restrict"
 header-img: "img/home-bg.jpg"
@@ -16,21 +16,19 @@ tags:
 
 **Preface**
 
-In geological sciences or other academic fields related to scientific computation, many people believe that the programming they learned is close or similar to what people are doing in Computer Science (CS), which is why I am bothering myself explaining the basics. The truth is, most programming tasks in geophysics is about invoking finite element libraries through Application Programming Interface (API) without worrying about lower-level details, which is the main reason people think programming is (much) the derivation of mathematical equations and less important than the interpretation of results.
+In geological sciences or other academic fields related to scientific computation, many people believe that the programming they learned is close or similar to what people are doing in computer science (CS) or software engineering (SE), which is why I am bothering myself explaining the basics.
 
-Annoyingly, after so many years studying in geophysics, I found the programming tasks in this major boring, or I can even use the word "lame" to describe them. In my opinion, the standard about programming is too low, and when people state "similar", they probably did not understand the above fact.
-
-Our first discussion question must be, *Why do I consider geophysicists incapable of developing software?*, or *Why are programming more complicated than what most people think?*.
+After so many years of studying in geophysics, I started getting annoyed by the programming tasks here. Most programming tasks in this major is to solve real Earth structures using available codes like *BurnMan* or *FEniCS*. Unfortunately, invoking finite element libraries through Application Programming Interface (API) does not require knowledge about low-level details. To some extent, this makes programming much easier to handle than learning mathematics, physics, petrology, and interpretations of the outcome. In my opinion, the standard about programming is too low, and when people state "similar", they probably do not understand these facts. They should have done a lot more research before saying these things!
 
 **Why are data structures and algorithms so important?**
 
 Software development, in real cases, relies on a variety of comprehensive skills. "Design patterns for solving algorithmic problems" - like many university programs taught us - are ideal abstractions of real-world problems. Merging software modules by multiple developers, compiling and fixing a package in a modern environment, or for some reason remaking something from scratch, etc. will bring much more pain than designing and implementing algorithms.
 
-Nevertheless, efficiency is still one of the most difficult aspects of programming, for that reducing the execution time of a section of code requires far more knowledge than making it work merely. Most IT companies' job interviewers evaluate their interviewees' abilities from the way they answer algorithmic problems. It has been widely addressed that algorithm engineers are paid higher salaries than other software developers, although some do not agree. In any case, "data structures and algorithms" are primary skills for programmers to go to their dream places (prestigious companies like Nvidia, for example).
+Nevertheless, efficiency is still one of the most difficult aspects of programming, for that reducing the execution time of a section of code requires far more knowledge than making it work. Most IT companies' job interviewers evaluate their interviewees' abilities from the way they answer algorithmic problems. It has been widely addressed that algorithm engineers are paid higher salaries than other software developers, although some do not agree. In any case, "data structures and algorithms" are primary skills for programmers to go to their dream places (prestigious companies like Nvidia, for example).
 
 ![rb_tree](/img/in-post/post-leetcode-journey/Red-black_tree_example.png)
 
-From the micro-level, concepts like graph theory and discrete mathematics used by computer scientists determine how objects/events can be allocated in computer memories and how each record should be accessed from its neighbors, which usually results in an impact on execution efficiencies. Although this may not matter for small problems, the effect accumulates and eventually becomes significant as a project grows. Concerns about these aspects make CS to some extent - although not totally - different from other subjects that require code writing skills.
+From the micro-level, concepts like graph theory and discrete mathematics used by computer scientists determine how items/objects can be allocated in computer memories and how each record should be accessed from its neighbors, which usually results in an impact on execution efficiencies. Although this may not matter for small problems, the effect accumulates and eventually becomes significant as a project grows. Concerns about these aspects make CS/SE significantly different from other subjects that require code writing skills.
 
 Thanks to the innovative application of Red-Black Trees (time complexity: O[log N]) in the Linux kernel, searching in a dataset containing 1,000,000,000 elements requires 30 comparisons only. In contrast, a naive approach (time complexity: O[N]) usually requires many more operations than this. Since 2012 while studying in Canada, I have been fascinated by many coding contests, including the most well-known Google Code Jam. In the computer industry, many people like me believe that skills in writing efficient codes make a gigantic difference (not only for ACM, mainly), for which I have been working much harder on learning algorithms rather than the syntactic aspect of programming languages.
 
