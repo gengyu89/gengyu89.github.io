@@ -25,7 +25,7 @@ tags:
 
 These techniques aim to improve your working efficiency of producing figures with *Generic Mapping Tools*. Although the document uses GMT 4 for demonstrations, it is not difficult for readers to follow the ideas and rewrite them in GMT 5 or higher. The author reserves the copyright of any figures in the examples (if there are any). Full scripts for producing these figures will not be released to the public.
 
-![execution_example](/img/in-post/post-gmt-study-notes/Convert_640px_Excellent.gif)
+![execution_example](/img/in-post/post-gmt-study-notes/Convert_480px_Excellent.gif)
 
 #### Preparatory knowledge
 
@@ -202,7 +202,7 @@ In the Terminal, you will see:
 Cleaning temporary files...               OK
 Initializing parameters...                OK
 ```
-The "OK" is in green font.
+The `status 0` statements print "OK" texts in green, showing the completion of each code section.
 
 `grdcontour` vs. `pscontour`
 
