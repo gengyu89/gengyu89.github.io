@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Solutions to LeetCode in Java"
-subtitle:   "A criticism about people's lack of common-sense"
+subtitle:   "Some advice for job interviews"
 date:       2020-09-13 12:00:00
 author:     "__restrict"
 header-img: "img/home-bg.jpg"
