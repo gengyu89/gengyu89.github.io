@@ -7,18 +7,26 @@ author:     "__restrict"
 header-img: "img/home-bg.jpg"
 catalog: true
 tags:
-    - 红黑树
+    - Red-Black Trees
     - Google Code Jam
     - ACM
-    - 二叉堆
-    - 哈希映射
+    - Binary Heaps
+    - Hash Mapping
+---
+
+**Timeline**
+* `2020-08-10`: created [LeetCodeJourney](https://github.com/gengyu89/LeetCodeJourney)
+* `2020-09-11`: inspired by Dianne Pham's project
+* `2020-09-12`: composed as Markdown files
+* `2020-09-13`: hosted on GitHub and rendered as Jekyll pages
+
 ---
 
 **Preface**
 
-In geological sciences or other academic fields related to scientific computation, many people believe that the programming they learned is close or similar to what people are doing in computer science (CS) or software engineering (SE), which is why I am bothering myself explaining the basics.
+In geological sciences or other academic fields related to scientific computation, many people believe that the programming they learned is close to what people are doing in computer science (CS) or software engineering (SE), which is why I am bothering myself explaining the basics. After so many years of studying geophysics, I started getting annoyed by the programming tasks in this major, not because they are too easy. They do not fit my interest, or they are quite different from computer science. In my opinion, these two subjects have completely different focuses, and when people state "similar", they probably do not understand the theories.
 
-After so many years of studying in geophysics, I started getting annoyed by the programming tasks here. Most programming tasks in this major is to solve real Earth structures using available codes like *BurnMan* or *FEniCS*. Unfortunately, invoking finite element libraries through Application Programming Interface (API) does not require knowledge about low-level details. To some extent, this makes programming much easier to handle than learning mathematics, physics, petrology, and interpretations of the outcome. In my opinion, the standard about programming is too low, and when people state "similar", they probably do not understand these facts. They should have done a lot more research before saying these things!
+> They should have done a lot more research before drawing this conclusion!
 
 **Why are data structures and algorithms so important?**
 
@@ -54,7 +62,7 @@ That being said, exquisite algorithms you come up with by afflatus must be built
 * Minimum Spanning Tree: Kruskal - O[E log(V)], Prim - O[E+V log(V)]
 * Dynamics Programming: knapsack (pseudo-polynomial), KMP (failure function), shortest editing distance, minimum coins of changes - check online for individual time complexity
 
-Based on the preceding choices, optimization seems quite necessary for sparse graphs, in which V is the number of vertices, and E is the number of edges. Also, note that the runtime may differ for specific problems.
+Based on the preceding choices, optimization is quite necessary for sparse graphs, in which V is the number of vertices, and E is the number of edges. Also, note that the runtime may differ for specific problems.
 
 ![khans_algorithm](/img/in-post/post-leetcode-journey/Topological_Sort.png)
 

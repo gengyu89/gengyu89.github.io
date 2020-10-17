@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "GMT Study Notes"
-subtitle:   "Fabulous techniques for Generic Mapping Tools"
+subtitle:   "Simple tricks to make scripting in GMT manageable"
 date:       2020-10-15 12:00:00
 author:     "__restrict"
 header-img: "img/home-bg.jpg"
@@ -23,9 +23,11 @@ tags:
 
 **Preface**
 
-These techniques aim to improve your working efficiency of producing figures with *Generic Mapping Tools*. Although the document uses GMT 4 for demonstrations, it is not difficult for readers to follow the ideas and rewrite them in GMT 5 or higher. The author reserves the copyright of the figures in the examples. Full scripts for producing these figures will not be released to the public.
+These techniques aim to improve your working efficiency of producing figures with *Generic Mapping Tools*. Although the document uses GMT 4 for demonstrations, it is not difficult for readers to follow the ideas and rewrite them in GMT 5 or higher. The author reserves the copyright of any figures in the examples (if there are any). Full scripts for producing these figures will not be released to the public.
 
-### Preparatory knowledge
+![execution_example](/img/in-post/post-gmt-study-notes/Convert_480px_Excellent.gif)
+
+#### Preparatory knowledge
 
 **Syntax incompatibilities**
 
@@ -69,15 +71,15 @@ HSV_MIN_VALUE               Y_ORIGIN
 INPUT_CLOCK_FORMAT          Y2K_OFFSET_YEAR
 INPUT_DATE_FORMAT
 ```
-### Start working
+#### Start working
 
 **Disposal of temporary files**
 
 In a timely manner, clean up `*.intns` and `*.grd` files after calling `grdimage` and `grdcontour` and `*.cpt` files after calling `psxy` and `psscale`, such as
 ```bash
 echo "Recycling wastes..."
-rm *.cpt            # used by psxy, psxyz and psscale
-rm *.intns *.grd    # used by grdimage and grdcontour
+rm *.cpt          # used by psxy, psxyz and psscale
+rm *.intns *.grd  # used by grdimage and grdcontour
 ```
 These lines of code clean up used files in the working directory to maintain a tidy environment. There is no consequence if you do not do it. However, the following is more than just a suggestion.
 
@@ -101,7 +103,7 @@ gmtset PAGE_ORIENTATION portrait
 ```
 to specify the page orientation. Make sure these lines appear after cleaning the GMT configurations. They are equivalent to using a `-P` argument for each plotting command. Using the Portrait Mode is much more convenient than using the `-P` argument many times.
 
-### Advanced techniques
+#### Advanced techniques
 
 **Avoid hard-coded filenames**
 
@@ -109,7 +111,7 @@ In a GMT script, the output filename can be either specified explicitly or throu
 
 To do this elegantly, consider introducing a little bit usage of bash variables. Suppose a script is named `example.gmt`, and you would like to guide each GMT command to `example.ps`. A preliminary attempt could be
 ```bash
-> $0.ps    # >> $0.ps for writing to open files
+> $0.ps  # >> $0.ps for writing to open files
 ```
 as GMT standard output. This will write the figure into `example.gmt.ps`. The `\$0` variable gives you the full filename, and you have to keep the original file extension in the output filename.
 
@@ -121,7 +123,7 @@ filename="$file.ps"
 ```
 somewhere at the beginning of the script; then, use
 ```bash
-> $filename    # >> $filename for writing to open files
+> $filename  # >> $filename for writing to open files
 ```
 to guide each plotting command. This will write the figure into `example.ps` instead of `example.gmt.ps`.
 
@@ -169,6 +171,38 @@ to convert the file to PNG using a tight BoundingBox and rotating it back to nor
 ---
 
 **Appendix**
+
+A function for reporting status to the user:
+```bash
+function status {
+  case $1 in
+    0 ) printf "\e[0;32mOK\e[0m\n" ;; # 0 = OK
+    1 ) printf "\bskip\n" ;;          # 1 = skip
+    * ) printf "%-42s" "$*" ;;        # otherwise, print message
+  esac
+}
+```
+Here is how to use:
+```bash
+status "Cleaning temporary files..."
+[[ -e .gmtcommands4 ]] && rm .gmtcommands4
+[[ -e .gmtdefaults4 ]] && rm .gmtdefaults4
+status 0
+
+status "Initializing parameters..."  # all fixed for gmt 5
+gmt set FONT_ANNOT_PRIMARY 10p       # legend and axes
+gmt set MAP_FRAME_TYPE fancy
+gmt set FONT_LABEL 12p  # color scale title
+gmt set FONT_TITLE 14p  # super plot title
+gmt set PS_PAGE_ORIENTATION portrait
+status 0
+```
+In the Terminal, you will see:
+```
+Cleaning temporary files...               OK
+Initializing parameters...                OK
+```
+The "OK" is in green font.
 
 `grdcontour` vs. `pscontour`
 

@@ -29,7 +29,7 @@ tags:
 
 ---
 
-### Автомат Калашникова (CV-47)
+#### Автомат Калашникова (CV-47)
 
 **Polygon**
 ![akpolygon](/img/in-post/post-csgo-weapons/ak47_in_3dsmax.png)
@@ -37,7 +37,7 @@ tags:
 **Final Render with Lumination**
 ![akrender](/img/in-post/post-csgo-weapons/ak47_in_photoshop_72dpi_bicubic.jpg)
 
-### M4A1 (Carbine)
+#### M4A1 (Carbine)
 
 **Polygon**
 ![m4polygon](/img/in-post/post-csgo-weapons/m4a1_in_3dsmax.png)
@@ -45,7 +45,7 @@ tags:
 **Final Render with Lumination**
 ![m4render](/img/in-post/post-csgo-weapons/m4a1_in_photoshop_72dpi_bicubic.jpg)
 
-### Arctic Warfare Magnum (AWP)
+#### Arctic Warfare Magnum (AWP)
 
 **Polygon**
 ![awppolygon](/img/in-post/post-csgo-weapons/awp_in_3dsmax.png)
@@ -53,7 +53,7 @@ tags:
 **Final Render with Lumination**
 ![awprender](/img/in-post/post-csgo-weapons/awp_in_photoshop_72dpi_bicubic.jpg)
 
-### Desert Eagle (Deagle)
+#### Desert Eagle (Deagle)
 
 **Polygon**
 ![deaglepolygon](/img/in-post/post-csgo-weapons/deagle_in_3dsmax.png)
