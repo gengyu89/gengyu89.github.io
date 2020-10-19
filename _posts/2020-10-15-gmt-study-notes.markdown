@@ -29,48 +29,10 @@ These techniques aim to improve your working efficiency of producing figures wit
 
 #### Preparatory knowledge
 
-**Syntax incompatibilities**
+**A title goes here**
 
-Since there is no inheritance relationship between GMT 4 and GMT 5, preferably install both versions, do not try to modify a GMT 4 script to make it work on GMT 5, vice versa. It is a waste of time and sometimes unattainable. Moreover, it is not a good idea to switch on the *Compatibility Mode* of GMT 5, either. Firstly, turning on the Compatibility Mode would result in the co-existence of GMT 4 syntax and GMT 5 syntax in the same script, which is not good practice. Secondly, there are always problems to make a GMT 4 script run in GMT 5. The Compatibility Mode does not solve the problems as you expected.
+> This section is still under rapid development...
 
-Here is a list of page settings that only exist in GMT 4 and could raise warnings in GMT 5 even with Compatibility Mode on:
-```
-ANNOT_FONT_PRIMARY          INTERPOLANT
-ANNOT_FONT_SECONDARY        LABEL_FONT
-ANNOT_FONT_SIZE_PRIMARY     LABEL_OFFSET
-ANNOT_FONT_SIZE_SECONDARY   LINE_STEP
-ANNOT_MIN_ANGLE             MAP_SCALE_FACTOR
-ANNOT_OFFSET_PRIMARY        MEASURE_UNIT
-ANNOT_OFFSET_SECONDARY      NAN_RECORDS
-BASEMAP_AXES                OBLIQUE_ANNOTATION
-BASEMAP_FRAME_RGB           OUTPUT_CLOCK_FORMAT
-BASEMAP_TYPE                OUTPUT_DATE_FORMAT
-CHAR_ENCODING               OUTPUT_DEGREE_FORMAT
-D_FORMAT                    PAGE_COLOR
-DEGREE_SYMBOL               PAGE_ORIENTATION
-ELLIPSOID                   PAPER_MEDIA
-FIELD_DELIMITER             PLOT_CLOCK_FORMAT
-FRAME_PEN                   PLOT_DATE_FORMAT
-FRAME_WIDTH                 PLOT_DEGREE_FORMAT
-GLOBAL_Y_SCALE              POLAR_CAP
-GLOBAL_X_SCALE              PS_COLOR
-GRID_CROSS_SIZE_PRIMARY     TICK_LENGTH
-GRID_CROSS_SIZE_SECONDARY   TICK_PEN
-GRID_PEN_PRIMARY            TIME_FORMAT_PRIMARY
-GRID_PEN_SECONDARY          TIME_FORMAT_SECONDARY
-GRIDFILE_FORMAT             UNIX_TIME_FORMAT
-GRIDFILE_SHORTHAND          UNIX_TIME_POS
-HEADER_FONT_SIZE            UNIX_TIME
-HEADER_FONT                 VECTOR_SHAPE
-HEADER_OFFSET               VERBOSE
-HISTORY                     WANT_LEAP_SECONDS
-HSV_MAX_SATURATION          X_ORIGIN
-HSV_MAX_VALUE               XY_TOGGLE
-HSV_MIN_SATURATION          Y_AXIS_TYPE
-HSV_MIN_VALUE               Y_ORIGIN
-INPUT_CLOCK_FORMAT          Y2K_OFFSET_YEAR
-INPUT_DATE_FORMAT
-```
 #### Start working
 
 **Disposal of temporary files**
@@ -85,7 +47,7 @@ These lines of code clean up used files in the working directory to maintain a t
 
 At either the beginning or the end of your GMT script, use
 ```bash
-echo "Cleaning GMT configurations..."
+echo "Cleaning GMT configurations..."  # modifications for gmt 5 needed
 [[ -e .gmtcommands4 ]] && rm .gmtcommands4
 [[ -e .gmtdefaults4 ]] && rm .gmtdefaults4
 ```
@@ -102,6 +64,59 @@ If you prefer to use the *Portrait Mode* to create a plot, use
 gmtset PAGE_ORIENTATION portrait
 ```
 to specify the page orientation. Make sure these lines appear after cleaning the GMT configurations. They are equivalent to using a `-P` argument for each plotting command. Using the Portrait Mode is much more convenient than using the `-P` argument many times.
+
+**Safe usage of `-R` and `-J` arguments**
+
+Declaring variables in a bash script is not only to improve the readability and portability. When composing a GMT script, the significance of using variables is far more than these things.
+
+In general, study area and projection method just need to be provided once in a GMT script. According to the GMT syntax requirements, these parameters could be omitted after the first invoke, as presented below:
+```bash
+echo "Plotting shorelines..."
+pscoast -JM6i -R124/132/33/39 -Ir -N1 -Di \
+    -Ba2f1:."Busan Earthquakes Epicenter and Station Map": \
+    -Wdarkgrey -Xc -Yc -K > map_names.ps
+    # arguments for -R and -J are specified
+
+echo "Projecting grids..."
+grdimage pattopobath.grd -R -J \
+    -Cpattopo.cpt -Ipattopo.intns -O -K >> map_names.ps
+    # arguments for -R and -J are omitted
+```
+
+However, this turns out to be a lazy omission and can cause issues when the map maker needs to move the first plotting command downward but forgets to modify the `-R` and `-J` arguments. With no parameters given for the first invoke, GMT will look for the parameters of these arguments from their last execution, to be more specific, the previous time you run a GMT script or any GMT calls involving `-R` and `-J`.
+```bash
+echo "Projecting grids..."
+grdimage pattopobath.grd -R -J \
+    -Cpattopo.cpt -Ipattopo.intns -Xc -Yc -K > map_names.ps
+    # wrong, -R and -J will take the
+    # parameters from their last call
+
+echo "Plotting shorelines..."
+pscoast -JM6i -R124/132/33/39 -Ir -N1 -Di \
+    -Ba2f1:."Busan Earthquakes Epicenter and Station Map": \
+    -Wdarkgrey -O -K >> map_names.ps
+```
+
+For safety, it is strongly recommended to save these parameters in variables and provide them for each `-R` and `-J` invoke. With these good habits developed, the arrangement of code sections might become much more straightforward.
+```bash
+# declare some variables
+J=M6i
+R=124/132/33/39
+ps=map_names.ps
+
+echo "Projecting grids..."
+grdimage pattopobath.grd -J$J -R$R \
+    -Cpattopo.cpt -Ipattopo.intns -Xc -Yc -K > $ps
+    # arguments for -R and -J are specified for each invoke
+
+echo "Plotting shorelines..."
+pscoast -R$R -J$J -Ir -N1 -Di \
+    -Ba2f1:."Busan Earthquakes Epicenter and Station Map": \
+    -Wdarkgrey -O -K >> $ps
+    # safe for switching lines
+```
+
+Be aware that you still have to be careful about the usages of `-O`, `-K`, `>` and `>>`. Without upgrading to the latest GMT 6, there are thus far no easy ways to get rid of these troubles.
 
 #### Advanced techniques
 
@@ -168,7 +183,13 @@ echo "Done."
 ```
 to convert the file to PNG using a tight BoundingBox and rotating it back to normal orientation in case it was in Landscape mode. In GMT 5, `ps2raster` can also be replaced by `psconvert` for the same purpose.
 
-**`grdcontour` vs. `pscontour`**
+**Different interpolation methods**
+
+`grdcontour` and `pscontour` are both GMT commands for plotting contours. Some differences are briefly summarized below:
+* `pscontour` interpolates data through an optimal triangulation method; `grdcontour` obtains contours from the surface created with `surface` or `xyz2grd`.
+* `pscontour` creates contours directly from the original data; while to use `grdcontour`, you have to plot a surface with `grdimage` as prior work.
+* The contour lines created with `grdimage` are smoother than those created with `pscontour` related to their interpolation methods.
+`pscontour` does not support extrapolation; the extrapolation of `grdimage` is default on and there is no native option to switch it off. This is also related to interpolation methods.
 
 To fill the spaces with colors in between contour lines, a `-C` option appended to `pscontour` specifying a `*.cpt` file is needed. There are multiple ways of creating color palette tables, manually or automatically. When the range of data is clear, `makecpt` is a way to do it manually; `xyz2grd` with `grd2cpt` creates a color palette table automatically according to the maximum and minimum values in the data. Furthermore, creating a text file and entering a table from scratch is even possible, as an example<sup>[1]</sup> shows:
 ```bash
@@ -208,6 +229,7 @@ Here is how to use:
 status "Cleaning temporary files..."
 [[ -e .gmtcommands4 ]] && rm .gmtcommands4
 [[ -e .gmtdefaults4 ]] && rm .gmtdefaults4
+[[ -e  gmt.history  ]] && rm  gmt.history
 status 0
 
 status "Initializing parameters..."  # all fixed for gmt 5
@@ -218,9 +240,48 @@ gmt set FONT_TITLE 14p  # super plot title
 gmt set PS_PAGE_ORIENTATION portrait
 status 0
 ```
-In the Terminal, you will see:
+In the Terminal, you will see
 ```
 Cleaning temporary files...               OK
 Initializing parameters...                OK
 ```
 The `status 0` statements print "OK" texts in green, showing the completion of each code section.
+
+List of GMT 4 page settings that are deprecated in GMT 5:
+```
+ANNOT_FONT_PRIMARY          INTERPOLANT
+ANNOT_FONT_SECONDARY        LABEL_FONT
+ANNOT_FONT_SIZE_PRIMARY     LABEL_OFFSET
+ANNOT_FONT_SIZE_SECONDARY   LINE_STEP
+ANNOT_MIN_ANGLE             MAP_SCALE_FACTOR
+ANNOT_OFFSET_PRIMARY        MEASURE_UNIT
+ANNOT_OFFSET_SECONDARY      NAN_RECORDS
+BASEMAP_AXES                OBLIQUE_ANNOTATION
+BASEMAP_FRAME_RGB           OUTPUT_CLOCK_FORMAT
+BASEMAP_TYPE                OUTPUT_DATE_FORMAT
+CHAR_ENCODING               OUTPUT_DEGREE_FORMAT
+D_FORMAT                    PAGE_COLOR
+DEGREE_SYMBOL               PAGE_ORIENTATION
+ELLIPSOID                   PAPER_MEDIA
+FIELD_DELIMITER             PLOT_CLOCK_FORMAT
+FRAME_PEN                   PLOT_DATE_FORMAT
+FRAME_WIDTH                 PLOT_DEGREE_FORMAT
+GLOBAL_Y_SCALE              POLAR_CAP
+GLOBAL_X_SCALE              PS_COLOR
+GRID_CROSS_SIZE_PRIMARY     TICK_LENGTH
+GRID_CROSS_SIZE_SECONDARY   TICK_PEN
+GRID_PEN_PRIMARY            TIME_FORMAT_PRIMARY
+GRID_PEN_SECONDARY          TIME_FORMAT_SECONDARY
+GRIDFILE_FORMAT             UNIX_TIME_FORMAT
+GRIDFILE_SHORTHAND          UNIX_TIME_POS
+HEADER_FONT_SIZE            UNIX_TIME
+HEADER_FONT                 VECTOR_SHAPE
+HEADER_OFFSET               VERBOSE
+HISTORY                     WANT_LEAP_SECONDS
+HSV_MAX_SATURATION          X_ORIGIN
+HSV_MAX_VALUE               XY_TOGGLE
+HSV_MIN_SATURATION          Y_AXIS_TYPE
+HSV_MIN_VALUE               Y_ORIGIN
+INPUT_CLOCK_FORMAT          Y2K_OFFSET_YEAR
+INPUT_DATE_FORMAT
+```
