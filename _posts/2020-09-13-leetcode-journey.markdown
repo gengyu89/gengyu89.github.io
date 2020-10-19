@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Solutions to LeetCode in Java"
-subtitle:   "Some advice for job interviews"
+subtitle:   "Plus some advice for job interviews"
 date:       2020-09-13 12:00:00
 author:     "__restrict"
 header-img: "img/home-bg.jpg"
@@ -24,7 +24,7 @@ tags:
 
 **Preface**
 
-In geological sciences or other academic fields related to scientific computation, many people believe that the programming they learned is close to what people are doing in computer science (CS) or software engineering (SE), which is why I am bothering myself explaining the basics. After so many years of studying geophysics, I started getting annoyed by the programming tasks in this major, not because they are too easy. They do not fit my interest, or they are quite different from computer science. In my opinion, these two subjects have completely different focuses, and when people state "similar", they probably do not understand the theories.
+In geological sciences or other academic fields related to scientific computation, many people believe that the programming they learned is close to software engineering (SE) or computer science (CS), which is why I am bothering myself explaining the basics. After so many years of studying geophysics, I started getting annoyed by the programming tasks in this major, not because they are too easy. They do not fit my interest, or they are quite different from what people are doing in CS. In my opinion, these two subjects have completely different focuses, and when people state "similar", they probably do not understand the theories.
 
 > They should have done a lot more research before drawing this conclusion!
 

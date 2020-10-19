@@ -168,6 +168,27 @@ echo "Done."
 ```
 to convert the file to PNG using a tight BoundingBox and rotating it back to normal orientation in case it was in Landscape mode. In GMT 5, `ps2raster` can also be replaced by `psconvert` for the same purpose.
 
+**`grdcontour` vs. `pscontour`**
+
+To fill the spaces with colors in between contour lines, a `-C` option appended to `pscontour` specifying a `*.cpt` file is needed. There are multiple ways of creating color palette tables, manually or automatically. When the range of data is clear, `makecpt` is a way to do it manually; `xyz2grd` with `grd2cpt` creates a color palette table automatically according to the maximum and minimum values in the data. Furthermore, creating a text file and entering a table from scratch is even possible, as an example<sup>[1]</sup> shows:
+```bash
+echo "Getting color palette table file..."
+echo -8000 255 15 255 -7000 255 15 255  > twallnew.cpt
+echo -7000 255 15 255 -6000 255 75 255 >> twallnew.cpt
+echo -6000 255 75 255 -5000 255 75 225 >> twallnew.cpt
+```
+[1] from Jyr-Ching HU, Department of Geosciences, National Taiwan University
+
+Using the RGB system, the format of the cpt-file is:
+```
+z0 Rmin Gmin Bmin z1 Rmax Gmax Bmax [A]
+...
+zn-2 Rmin Gmin Bmin zn-1 1 Rmax Gmax Bmax [A]
+```
+The colors may be specified either in the RGB (Red, Green, Blue) system or in the HSV system (Hue, Saturation, Value), and the parameter `COLOR MODEL` in the `.gmtdefaults` file must be set accordingly.
+
+More differences between gridding methods are demonstrated in the official documentation [GMT historical collection](http://gmt.soest.hawaii.edu/doc/5.2.1/gallery/ex16.html).
+
 ---
 
 **Appendix**
@@ -203,24 +224,3 @@ Cleaning temporary files...               OK
 Initializing parameters...                OK
 ```
 The `status 0` statements print "OK" texts in green, showing the completion of each code section.
-
-`grdcontour` vs. `pscontour`
-
-To fill the spaces with colors in between contour lines, a `-C` option appended to `pscontour` specifying a `*.cpt` file is needed. There are multiple ways of creating color palette tables, manually or automatically. When the range of data is clear, `makecpt` is a way to do it manually; `xyz2grd` with `grd2cpt` creates a color palette table automatically according to the maximum and minimum values in the data. Furthermore, creating a text file and entering a table from scratch is even possible, as an example<sup>[1]</sup> shows:
-```bash
-echo "Getting color palette table file..."
-echo -8000 255 15 255 -7000 255 15 255  > twallnew.cpt
-echo -7000 255 15 255 -6000 255 75 255 >> twallnew.cpt
-echo -6000 255 75 255 -5000 255 75 225 >> twallnew.cpt
-```
-[1] from Jyr-Ching HU, Department of Geosciences, National Taiwan University
-
-Using the RGB system, the format of the cpt-file is:
-```
-z0 Rmin Gmin Bmin z1 Rmax Gmax Bmax [A]
-...
-zn-2 Rmin Gmin Bmin zn-1 1 Rmax Gmax Bmax [A]
-```
-The colors may be specified either in the RGB (Red, Green, Blue) system or in the HSV system (Hue, Saturation, Value), and the parameter `COLOR MODEL` in the `.gmtdefaults` file must be set accordingly.
-
-More differences between gridding methods are demonstrated in the official documentation [GMT historical collection](http://gmt.soest.hawaii.edu/doc/5.2.1/gallery/ex16.html).
