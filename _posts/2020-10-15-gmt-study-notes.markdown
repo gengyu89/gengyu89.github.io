@@ -67,9 +67,9 @@ to specify the page orientation. Make sure these lines appear after cleaning the
 
 **Safe usage of `-R` and `-J` arguments**
 
-Declaring variables in a bash script is not only to improve the readability and portability. When composing a GMT script, the significance of using variables is far more than these things.
+Declaring variables in a bash script is not only to improve the readability and portability. The significance of using variables is far more than these!
 
-In general, study area and projection method just need to be provided once in a GMT script. According to the GMT syntax requirements, these parameters could be omitted after the first invoke, as presented below:
+In general, study area and projection method just need to be provided once in a GMT script. According to the GMT syntax requirements, these parameters could be omitted after the first invoke, as demonstrated below:
 ```bash
 echo "Plotting shorelines..."
 pscoast -JM6i -R124/132/33/39 -Ir -N1 -Di \
