@@ -261,13 +261,13 @@ class Node(object):
 ```
 **GO**: Game Over <br> **IL**: Infinite Loop
 
-“完全覆盖” 的定义应该是 (12x12-1)/(12x12) x 100% = 99.3056%，别忘了食物还要占用一个单元格呢。
+“完全覆盖” 的定义为 (12x12-1)/(12x12) x 100% = 99.3056%，别忘了食物也要占用一个单元格呢！
 
 以下为各种寻路算法汇总：
 * Dynamic Window
 * Grid based algorithms
-  - Dijkstra（已讨论）
-  - A* search（已讨论）
+  - Dijkstra（已探讨）
+  - A* search（已探讨）
   - Potential Field algorithm
   - Grid based coverage path planning
 * State Lattice planning

@@ -7,15 +7,15 @@ author:     "__restrict"
 header-img: "img/home-bg.jpg"
 catalog: true
 tags:
-    - bash
-    - scripting
     - Generic Mapping Tools
     - OS X
     - Terminal
+    - scripting
+    - bash
 ---
 
 **Timeline**
-* `2017-02-01`: created
+* `2017-02-01`: created and shared on OverLeaf
 * `2017-02-20`: peer reviewed by Sabber Ahamed and Chunyu Liu
 * `2020-10-15`: hosted on GitHub and rendered as Jekyll pages
 
