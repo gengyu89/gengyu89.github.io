@@ -10,12 +10,12 @@ tags:
     - Makima Interpolation
     - RGB colorspace
     - YUV colorspace
-    - MATLAB
     - UI Design
+    - MATLAB
 ---
 
 **Timeline**
-* `2020-10-06`: the first version was released
+* `2020-10-06`: released the first version
 * `2020-10-19`: added a manual pixel selector
 * `2020-10-21`: hosted on GitHub and rendered as Jekyll pages
 
@@ -46,11 +46,11 @@ main.m
 
 ![gilbert_original](/img/in-post/post-exact-digitizer/gilbert_figure_6a_original.png)
 
-→ Cropped image for digitization (`/img/in-post/post-exact-digitizer/gilbert_figure_6a_crop.png`):
+→ Cropped image for digitization (`./input/gilbert_figure_6a_crop.png`):
 
 ![gilbert_impixel](/img/in-post/post-exact-digitizer/gilbert_figure_6a_impixel.png)
 
-→ User-provided digitized color scale (`/img/in-post/post-exact-digitizer/gilbert_colorbar.dat`):
+→ User-provided digitized color scale (`./input/gilbert_colorbar.dat`):
 ```
  401 222  44  42
  402 226  66  42
@@ -99,7 +99,7 @@ The sampled dataset will be saved as `./output/gilbert_digitized.dat`.
 -118.321315  41.561514  402.539683
  ...
 ```
-→ Remade contour map using auto-generated sample points:
+→ Remade contour map using auto-generated pixel locations:
 
 ![gilbert_auto](/img/in-post/post-exact-digitizer/gilbert_figure_6a_auto.png)
 
@@ -119,7 +119,7 @@ Trying more examples...
 
 ![yang_locations](/img/in-post/post-exact-digitizer/yang_set_locations.png)
 
-→ Remade contour map using auto-generated sample points:
+→ Remade contour map using auto-generated pixel locations:
 
 ![yang_auto](/img/in-post/post-exact-digitizer/yang_figure_6b_auto.png)
 
@@ -140,7 +140,7 @@ Method for doing the YUV conversion (`uv_distance.m`):
 | V |   |  0.615   -0.51499 -0.10001 | | B |
 ```
 List of parameters and their meanings:
-```python
+```matlab
 % interp_cbar.m
 cbar_lim = [38, 62];  % limits for interpolating the color scale
 N_levels =  64;       % the number of levels in the interpolated color scale

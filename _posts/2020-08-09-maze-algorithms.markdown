@@ -23,7 +23,7 @@ Computer Scientists 擅长把组合数学里面的东西运用到编程中来，
 #### —— 准备工作 ——
 
 老规矩，一切开始之前，先定义用来表示图的抽象数据类型 (ADT) 及其类方法。这些 ADT 是组织程序逻辑与实现任何算法的基础。在此只提供设计方案，如有兴趣请查看 `Maze.structs`。
-```Python
+```python
 from copy import deepcopy
 
 class Maze(object):
@@ -120,7 +120,7 @@ class Node(object):
 原则上讲，并不存在某一种生成过程必须用哪种渲染，但合适的渲染方式让一个算法更易于理解。至少在前两种算法里，节点属性 `visited` 是有用的，也可以不用，因为 “被访问过” 与 “建立连接” 是同一事实的两种表现。
 
 为得到流畅的播放效果，需要把计算和渲染分开。也就是每对迷宫进行一步操作，就将当前状态生成一个深拷贝缓存起来。待所有生成步骤完成以后，再逐帧渲染。为此我们需要一个类来存储迷宫的每一步状态：
-```Python
+```python
 class Frame(object):
     """Consists of a vector instance representing
     the operational unit and a Maze instance."""
@@ -137,7 +137,7 @@ class Frame(object):
         return self.__maze  # deepcopy() removed
 ```
 同理用 A-Star 算法 [Du and Swamy, 2016] 求解后的路径生成过程也要用一个 `Path` 类来存储每一帧内容：
-```Python
+```python
 class Path(object):
     """Data structure for storing each frame
     in the path generation animation."""
@@ -162,7 +162,7 @@ class Path(object):
 【网格设计】
 
 为解释本文所有算法，先要定义几个名词。本着视觉上舒服的原则，我们把一块 600x400 像素的画布分割成 30x20 个大小为 20x20 像素的单元。画布尺寸由全局变量 `PYGAMEWIDTH` 与 `PYGAMEHEIGHT` 给出，单元格大小为 `CELLSIZE` 且必须能够整除画布的长和宽。在定义了以上变量以后，
-```Python
+```python
 from itertools import product
 
 X_GRID = range(0, PYGAMEWIDTH, CELLSIZE)
@@ -171,7 +171,7 @@ Y_GRID = range(0, PYGAMEHEIGHT, CELLSIZE)
 便给出了每一个单元格左侧和下方两条线的位置，于是便有了两种渲染网格的方式。
 
 最直接的方式是渲染单元格之间的边缘，
-```Python
+```python
 def drawGrid():
     """渲染单元格边界"""
     for X in X_GRID:
@@ -184,7 +184,7 @@ def drawGrid():
 ![cell borders](/img/in-post/post-maze-algorithms/drawGrid_with_Title.png)
 
 另一种是渲染单元格的中心，
-```Python
+```python
 def drawCenters():
     """渲染单元格中心"""
     radius = int(0.1 * CELLSIZE)
@@ -283,7 +283,7 @@ def drawCenters():
 话虽这么说，有些时候看似最适合某个问题的数据结构，却不是最高效的实现方法（参见约瑟夫环问题）。
 
 一个并查集本质上就是由集合组成的列表，每一个集合需要一个父元素（可以用列表索引）方便查找。但如果不封装任何方法，全靠列表自带方法，实现起来不够优雅，定义专属的数据结构显得尤为必要。此处只提供框架：
-```Python
+```python
 class DisjointSet(object):
     """Disjoint set data structure."""
     
@@ -352,7 +352,7 @@ class DisjointSet(object):
 如果用有向图代表迷宫，那么遍历图中每一个节点，渲染它与联通状态下的节点之间的通道，是没有问题的做法。对于无向图，这种做法会造成大量重复的渲染。如果用一个 `rendered = []` 来存储已经渲染过的节点，每遍历一个节点都需要检查这个条件，那么随着长度的增加，判断数组元素是否存在会越来越慢。我们需要精巧地设计一个规则让程序在遍历的时候跳过一些单元格，无需借助额外的变量或数组就可以做到。
 
 最后我想到了通过坐标反向求取索引、再判断奇偶性的方法：
-```Python
+```python
 def isStaggered(node):
     """Determines whether a node has
     different row and column parities."""
