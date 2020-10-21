@@ -183,7 +183,7 @@ echo "Done."
 ```
 to convert the file to PNG using a tight BoundingBox and rotating it back to normal orientation in case it was in Landscape mode. In GMT 5, `ps2raster` can also be replaced by `psconvert` for the same purpose.
 
-**Different interpolation methods**
+**Two ways of creating contour plots**
 
 `grdcontour` and `pscontour` are both GMT commands for plotting contours. Some differences are briefly summarized below:
 * `pscontour` interpolates data through an optimal triangulation method; `grdcontour` obtains contours from the surface created with `surface` or `xyz2grd`.
