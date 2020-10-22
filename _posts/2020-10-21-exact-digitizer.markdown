@@ -50,15 +50,16 @@ main.m
 
 ![yang_original](/img/in-post/post-exact-digitizer/yang_figure_6b_original.bmp)
 
-→ Collecting user-specified pixel locations (the collected data must be saved as `./output/yang_locations.dat`):
+→ Collecting user-specified pixel locations (`set_locations.m`):
 
 ![yang_locations](/img/in-post/post-exact-digitizer/yang_set_locations.png)
+The collected data must be saved as `./output/yang_locations.dat`.
 
-→ Remade contour map using auto-generated pixel locations:
+→ Remade contour map using auto-generated pixel locations (224 pixels selected, 100 excluded):
 
 ![yang_auto](/img/in-post/post-exact-digitizer/yang_figure_6b_auto.png)
 
-→ Remade contour map using user-specified pixel locations:
+→ Remade contour map using user-specified pixel locations (231 pixels selected, 1 excluded):
 
 ![yang_manual](/img/in-post/post-exact-digitizer/yang_figure_6b_manual.png)
 
