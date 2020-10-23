@@ -15,6 +15,11 @@
 **Files you should not modify**
   - `package-lock.json` and `package.json`
 
+**Update profile photo**
+  1. Prepare the image
+  2. Update `sidebar-avatar` in _config.yml
+  3. Delete unused files from `sw.js`
+
 **Preview locally**
   1. Run `jekyll serve` in the root directory
   2. Type `http://localhost:4000` in your browser

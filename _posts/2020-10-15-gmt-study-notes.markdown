@@ -3,7 +3,7 @@ layout:     post
 title:      "GMT Study Notes"
 subtitle:   "Simple tricks to make scripting in GMT manageable"
 date:       2020-10-15 12:00:00
-author:     "__restrict"
+author:     "heapify"
 header-img: "img/home-bg.jpg"
 catalog: true
 tags:

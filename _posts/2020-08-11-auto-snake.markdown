@@ -3,7 +3,7 @@ layout:     post
 title:      "贪食蛇 AI 初等套路"
 subtitle:   "哈密顿路径、拓扑排序、动态规划和贪心算法的原理"
 date:       2020-08-11 12:00:00
-author:     "__restrict"
+author:     "heapify"
 header-img: "img/home-bg.jpg"
 catalog: true
 tags:

@@ -3,7 +3,7 @@ layout:     post
 title:      "四种随机生成迷宫的算法"
 subtitle:   "深搜遍历、递归分割、并查集和最小生成树原理"
 date:       2020-08-09 12:00:00
-author:     "__restrict"
+author:     "heapify"
 header-img: "img/home-bg.jpg"
 catalog: true
 tags:

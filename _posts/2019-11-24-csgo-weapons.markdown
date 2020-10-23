@@ -3,7 +3,7 @@ layout:     post
 title:      "3D 建模成果展示"
 subtitle:   "用 3ds Max 重建 CS:GO 的武器模型"
 date:       2019-11-24 12:00:00
-author:     "__restrict"
+author:     "heapify"
 header-img: "img/home-bg.jpg"
 catalog: true
 tags:

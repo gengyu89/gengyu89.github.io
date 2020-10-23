@@ -3,7 +3,7 @@ layout:     post
 title:      "Solutions to LeetCode in Java"
 subtitle:   "Plus advice for job interviews"
 date:       2020-09-13 12:00:00
-author:     "__restrict"
+author:     "heapify"
 header-img: "img/home-bg.jpg"
 catalog: true
 tags:

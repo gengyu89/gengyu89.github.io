@@ -3,7 +3,7 @@ layout:     post
 title:      "Exact Digitizer"
 subtitle:   "A MATLAB code for digitizing contour maps by color matching in the YUV colorspace"
 date:       2020-10-21 12:00:00
-author:     "__restrict"
+author:     "heapify"
 header-img: "img/home-bg.jpg"
 catalog: true
 tags:

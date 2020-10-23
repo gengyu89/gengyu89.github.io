@@ -3,7 +3,7 @@ layout:     post
 title:      "数独求解方法之卷积神经网络"
 subtitle:   ""
 date:       2020-06-05 12:00:00
-author:     "__restrict"
+author:     "heapify"
 header-img: "img/home-bg.jpg"
 catalog: true
 tags:
