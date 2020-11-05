@@ -1,18 +1,17 @@
 ---
 layout:     post
-title:      "C++ 有多难？ - 纸条的回答 - 知乎"
-subtitle:   "右值引用、重载决议、类型推导、引用折叠和构造函数自动推导"
+title:      "C++ 有多难？ - 知乎"
+subtitle:   "C++ 有多难？ - 纸条的回答 - 知乎"
 date:       2020-11-04 12:00:00
 author:     "heapify"
 header-img: "img/home-bg.jpg"
 catalog: true
 tags:
-    - C++ Templates
-    - C++11
-    - Nicolai Josuttis
-    - C++20
-    - C++17
-    - Copy Elision
+    - 右值引用
+    - 重载决议
+    - 类型推导
+    - 引用折叠
+    - 构造函数自动推导
 ---
 
 <span style="color:gray"> 1,319 人赞同了该回答 </span>
@@ -185,11 +184,11 @@ std::vector vec3{ vec1.begin(), vec2.end() };
 auto x = std::atomic<int>{ 10 };
 ```
 是可以的。因为在C++17中我们有*Copy Elision*。所以这里没有拷贝函数的调用，和直接定义并初始化是一致的。但是`atomic`初始化是有问题的。
-```c++
+```cpp
 std::atomic<int> x{};
 ```
 这样是不能零初始化的。当然了，这显然是API的不一致，或者说错误。所以我们有*LWG issue 2334*。预计在C++20修复这个问题。嘻嘻。
 
 以上内容基于《C++ templates》的作者Nicolai Josuttis的几场talk。
 
-<span style="color:darkgray"> 编辑于 2018-12-31 </span>
+<span style="color:gray"> 编辑于 2018-12-31 </span>
