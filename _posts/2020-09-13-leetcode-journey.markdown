@@ -26,7 +26,7 @@ tags:
 
 In geological sciences or other academic fields related to scientific computation, many people believe that the programming they learned is close to software engineering (SE) or computer science (CS), which is why I am bothering myself explaining the basics. After so many years of studying geophysics, I started getting annoyed by the programming tasks in this major, not because they are too easy. They do not fit my interest, or they are quite different from what people are doing in CS. In my opinion, these two subjects have completely different focuses, and when people state "similar", they probably do not understand the theories.
 
-> They should have done a lot more research before drawing this conclusion!
+> A real programmer does not believe these. They should have done a lot more research before drawing this conclusion!
 
 **Why are data structures and algorithms so important?**
 
