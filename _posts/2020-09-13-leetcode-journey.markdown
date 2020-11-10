@@ -16,8 +16,7 @@ tags:
 
 **Timeline**
 * `2020-08-10`: created [LeetCodeJourney](https://github.com/gengyu89/LeetCodeJourney)
-* `2020-09-11`: inspired by Dianne Pham's project
-* `2020-09-12`: composed as Markdown files
+* `2020-09-12`: composed Markdown files
 * `2020-09-13`: hosted on GitHub and rendered as Jekyll pages
 
 ---
@@ -26,7 +25,7 @@ tags:
 
 In geological sciences or other academic fields related to scientific computation, many people believe that the programming they learned is close to software engineering (SE) or computer science (CS), which is why I am bothering myself explaining the basics. After so many years of studying geophysics, I started getting annoyed by the programming tasks in this major, not because they are too easy. They do not fit my interest, or they are quite different from what people are doing in CS. In my opinion, these two subjects have completely different focuses, and when people state "similar", they probably do not understand the theories.
 
-> A real programmer does not believe these. They should have done a lot more research before drawing this conclusion!
+> A real programmer does not believe these things. They should have done a lot more research before drawing this conclusion!
 
 **Why are data structures and algorithms so important?**
 
@@ -36,7 +35,9 @@ Nevertheless, efficiency is still one of the most difficult aspects of programmi
 
 ![rb_tree](/img/in-post/post-leetcode-journey/Red-black_tree_example.png)
 
-From the micro-level, concepts like graph theory and discrete mathematics used by computer scientists determine how items/objects can be allocated in computer memories and how each record should be accessed from its neighbors, which usually results in an impact on execution efficiencies. Although this may not matter for small problems, the effect accumulates and eventually becomes significant as a project grows. Concerns about these aspects make CS/SE significantly different from other subjects that require code writing skills.
+From the micro-level, concepts like graph theory and discrete mathematics used by computer scientists determine
+how items/objects can be allocated in computer memories and
+how each record can be accessed from its neighbors efficiently, which usually results in an impact on execution efficiencies. Although this may not matter for small problems, the effect accumulates and eventually becomes significant as a project grows. Concerns about these aspects make CS/SE significantly different from other subjects that require code writing skills.
 
 Thanks to the innovative application of Red-Black Trees (time complexity: O[log N]) in the Linux kernel, searching in a dataset containing 1,000,000,000 elements requires 30 comparisons only. In contrast, a naive approach (time complexity: O[N]) usually requires many more operations than this. Since 2012 while studying in Canada, I have been fascinated by many coding contests, including the most well-known Google Code Jam. In the computer industry, many people like me believe that skills in writing efficient codes make a gigantic difference (not only for ACM, mainly), for which I have been working much harder on learning algorithms rather than the syntactic aspect of programming languages.
 
