@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "你见过最美的程序是什么？ - 知乎"
+title:      "你见过最美的程序是什么？"
 subtitle:   "你见过最美的程序是什么？ - 知乎"
 date:       2020-11-22 12:00:00
 author:     "heapify"
