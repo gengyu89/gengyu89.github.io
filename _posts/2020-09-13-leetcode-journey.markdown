@@ -21,23 +21,21 @@ tags:
 
 ---
 
-**Preface**
+<!-- **Preface**
 
 In geological sciences or other academic fields related to scientific computation, many people believe that (1) programming is less difficult compared to the derivation of equations and the interpretation of results, and (2) the programming they learned is close to software engineering (SE) or computer science (CS), which is why I am bothering myself explaining the basics. As for the first statement, it is true in geophysics, but the programming in this major is a generalized version of programming and way less challenging than that in CS.
 
-To answer (2), unfortunately, techniques for data processing in science do not touch the core concepts of computer science quite much. Algorithms, data structures, UI design, and API development... these skills are much more important as a software engineer. Geophysicists can be hardly capable of becoming developers without getting intensive training. After so many years of studying in both computer science and geophysics, I can see these two subjects have completely different focuses. They do not resemble each other in any way. When people mentioned above use *similar* to describe the relationship, they probably confuse the theories.
+To answer (2), unfortunately, techniques for data processing in science do not touch the core concepts of CS quite much. Algorithms, data structures, UI design, and API development... these skills are much more important as a software engineer. Geophysicists can be hardly capable of becoming developers without getting intensive training. After so many years of studying in both computer science and geophysics, I can see these two subjects have completely different focuses. They do not resemble each other in any way. When people mentioned above use *similar* to describe the relationship, they probably confuse the theories.
 
-> A real programmer does not believe it. They should have done a lot more research before drawing this conclusion!
+> A real programmer does not believe it. They should have done a lot more research before drawing this conclusion! -->
 
 **Why are data structures and algorithms so important?**
 
 Software development, in real cases, relies on a variety of comprehensive skills. *Design patterns for solving algorithmic problems* - like many university programs taught us - are ideal abstractions of real-world problems. Merging software modules by multiple developers, compiling a legacy code and fixing incompatibility issues, or for some reason "remaking a wheel" from scratch, etc. will definitely bring more pain than designing and implementing algorithms.
 
-Nevertheless, efficiency is still one of the most difficult aspects of programming, for that reducing the execution time of a code usually requires far more knowledge than making it work. From beginning to end, challenging algorithmic questions are the main focus of most IT companies' job interviews<sup>[1]</sup>. It has been widely addressed that algorithm engineers are paid higher salaries than other software developers, although some do not agree with this assertion. In any case, *data structures and algorithms* are primary skills for job hunters in IT to go to their dream places (prestigious companies like Nvidia, for example).
+Nevertheless, efficiency is still one of the most difficult aspects of programming, for that reducing the execution time of a code usually requires far more knowledge than making it work. From beginning to end, challenging algorithmic questions are the main focus of most IT companies' job interviews. It has been widely addressed that algorithm engineers are paid higher salaries than other software developers, although some do not agree with this assertion. In any case, *data structures and algorithms* are primary skills for job hunters in IT to go to their dream places (prestigious companies like Nvidia, for example).
 
-[1] rather than questions like *where do you see yourself in five years?*
-
-Mercifully speaking, even if <ins>proficient usage of CLTs, scripting languages, and an intro-level C++ for scientific computation</ins> are considered "essential skills for CS/SE", there are still quite many other techniques for geophysicists to learn in order to become qualified software engineers. For the most typical example, concepts like *Graph Theory* and *Discrete Mathematics* used by computer scientists determine how items/objects can be allocated in computer memories and how each record can be accessed from its neighbors, which usually results in an impact on execution efficiencies. Although this may not matter for small problems, the effect accumulates and eventually becomes significant as a project grows. Concerns about these aspects make CS/SE significantly different from other subjects that require code writing skills.
+From the micro-level, concepts like *Graph Theory* and *Discrete Mathematics* used by computer scientists determine how items/objects can be allocated in computer memories and how each record can be accessed from its neighbors, which usually results in an impact on execution efficiencies. Although this may not matter for small problems, the effect accumulates and eventually becomes significant as a project grows. Concerns about these aspects make CS/SE significantly different from other subjects that require code writing skills.
 
 ![rb_tree](/img/in-post/post-leetcode-journey/Red-black_tree_example.png)
 
