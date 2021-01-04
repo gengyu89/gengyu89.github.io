@@ -43,7 +43,7 @@ Thanks to the innovative application of Red-Black Trees (time complexity: O[log 
 
 **Commonly-used data structures and algorithms**
 
-[LeetCode](https://leetcode.com/) is one of the most fabulous websites for testing your problem-solving abilities in "CS manners" (concretely, choosing proper data structures, and implementing algorithms to satisfy specific requirements). The time limitations of LeetCode's problems are super strict. Brute-force can be used to pass a limited number of them. To make things more challenging, all LeetCode problems have limitations on memory usage.
+[LeetCode](https://leetcode.com/) is one of the most fabulous websites for testing your problem-solving abilities in "CS manners" (concretely, algorithm implementations based on proper usage of data structures). The time limitations of LeetCode's problems are super strict. Brute-force can be used to pass a limited number of them. To make things more challenging, all LeetCode problems have limitations on memory usage.
 
 To help tackle these problems, I would like to provide some learning and preparation suggestions. They may work for both coding contests and job interviews.
 
