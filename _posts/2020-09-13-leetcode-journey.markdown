@@ -29,9 +29,9 @@ As for the first statement, it is true in geophysics, but the programming in thi
 
 To answer (2), unfortunately, techniques for data processing in science do not touch the core concepts of CS quite much. Algorithms, data structures, UI design, and API development... these skills are much more important for a software engineer.
 
-After so many years of studying in both majors, I can see these two subjects have completely different focuses. Unlike scientists who are concerned about the problems they are solving, we developers will focus more on the readability and performance of our codes, the portability of the final product, and its capability of handling exceptions. Therefore, when people mentioned above use *similar* to describe the relationship, they probably confuse the theories.
+After so many years of studying in both majors, I can see these two subjects have completely different focuses. Unlike scientists who are concerned about the problems they are solving, we developers focus more on the readability and performance of our codes, the portability of the final product, and its capability of handling exceptions. Therefore, when people mentioned above use *similar* to describe the relationship, they probably confuse the theories.
 
-> A real programmer does not believe this statement. They should have done a lot more research before drawing this conclusion!
+> A real programmer does not believe these. They should have done a lot more research before drawing this conclusion!
 
 **Why are data structures and algorithms so important?**
 
