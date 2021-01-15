@@ -23,13 +23,13 @@ tags:
 
 **Preface**
 
-In geological sciences or other academic fields related to scientific computation, many people believe that (1) programming is less difficult compared to mathematics, physics, and the interpretation of results, and (2) the programming tasks they are doing is close to computer science (CS) or software engineering (SE), which is why I am bothering explaining the basics.
+In geological sciences or other academic fields related to scientific computation, many people believe that (1) programming is less difficult compared to mathematics, physics, and the interpretation of results, and (2) the programming tasks they are doing are close to computer science (CS) or software engineering (SE), which is why I am bothering explaining the basics.
 
-As for the first statement, it is true in geophysics, but the programming in this major is a generalized version of programming and way less challenging than that in CS. In my opinion, it is pre-mature to say that.
+As for the first statement, it is true in geophysics, but the programming in geophysical studies is a generalized version of programming and way less challenging than that in CS. In my opinion, it is pre-mature to say that.
 
-To answer (2), unfortunately, techniques for data processing in science do not touch the core concepts of CS quite much. Algorithms, data structures, UI design, and API development... these skills are much more important for a software engineer.
+To answer (2), unfortunately, techniques for data processing in science do not touch the core concepts of CS quite much. Algorithms, data structures, UI design, and API development... these skills are much more important for a software developer.
 
-After so many years of studying in both majors, I can see these two subjects have completely different focuses. Unlike scientists who are concerned about the problems they are solving, we developers focus more on the readability and performance of our codes, the portability of the final product, and its capability of handling exceptions. Therefore, when people mentioned above use *similar* to describe the relationship, they probably confuse the theories.
+After so many years of studying in both majors, I can see these two subjects have completely different focuses. Unlike scientists who are concerned about the problems they are solving, we developers may focus more on the readability and performance of our codes, the portability of the final product, and its capability of handling exceptions. Therefore, when people mentioned above use *similar* to describe the relationship, they probably confuse the theories.
 
 > A real programmer does not believe these. They should have done a lot more research before drawing this conclusion!
 
@@ -43,7 +43,7 @@ From the micro-level, concepts like *Graph Theory* and *Discrete Mathematics* us
 
 ![rb_tree](/img/in-post/post-leetcode-journey/Red-black_tree_example.png)
 
-Thanks to the innovative application of Red-Black Trees (time complexity: O[log N]) in the Linux kernel, searching in a dataset containing 1,000,000,000 elements requires 30 comparisons only. In contrast, the most naive approach (time complexity: O[N]) that traverses through an array linearly requires many more operations than this. Since 2012 while studying in Canada, I have been fascinated by the beauty of data structures and the most well-known coding contest [Google Code Jam](https://codingcompetitions.withgoogle.com/codejam). In the computer industry, many people like me believe that skills in writing efficient codes make a gigantic difference (not only for ACM, particularly), for which I have been working much harder on learning algorithms rather than the syntactic aspect of programming languages.
+Thanks to the innovative application of Red-Black Trees (time complexity: O[log N]) in the Linux kernel, searching in a dataset containing 1,000,000,000 elements requires 30 comparisons only. In contrast, the most naive approach (time complexity: O[N]) that traverses through an array linearly requires many more operations. Since 2012 while studying in Canada, I have been fascinated by the beauty of data structures and the most well-known coding contest [Google Code Jam](https://codingcompetitions.withgoogle.com/codejam). In the computer industry, many people like me believe that skills in writing efficient codes make a gigantic difference (not only for ACM, particularly), for which I have been working much harder on learning algorithms rather than the syntactic aspect of programming languages.
 
 **Commonly-used data structures and algorithms**
 
