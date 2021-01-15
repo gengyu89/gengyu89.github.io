@@ -23,7 +23,7 @@ tags:
 
 **Preface**
 
-In geological sciences or other academic fields related to scientific computation, many people believe that (1) programming is less difficult compared to mathematics, physics, and the interpretation of results, and (2) the programming tasks they are doing is close to what people are doing in computer science (CS) or software engineering (SE), which is why I am bothering explaining the basics here.
+In geological sciences or other academic fields related to scientific computation, many people believe that (1) programming is less difficult compared to mathematics, physics, and the interpretation of results, and (2) the programming tasks they are doing is close to computer science (CS) or software engineering (SE), which is why I am bothering explaining the basics.
 
 As for the first statement, it is true in geophysics, but the programming in this major is a generalized version of programming and way less challenging than that in CS. In my opinion, it is pre-mature to say that.
 
