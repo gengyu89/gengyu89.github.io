@@ -25,11 +25,11 @@ tags:
 
 In geological sciences or other academic fields related to scientific computation, many people believe that (1) programming is less difficult compared to mathematics, physics, and the interpretation of results, and (2) the programming tasks they are doing are close to computer science (CS) or software engineering (SE), which is why I am bothering explaining the basics.
 
-As for the first statement, it is true in geophysics, but the programming in geophysical studies is a generalized version of programming and way less challenging than that in CS. In my opinion, it is pre-mature to say that.
+Although the first statement is true for our major, programming can be much more difficult than what people see in geophysical studies. Only from doing research, they will not have a lot of chances to understand the true story.
 
 To answer (2), unfortunately, techniques for data processing in science do not touch the core concepts of CS quite much. Algorithms, data structures, UI design, and API development... these skills are much more important for a software developer.
 
-After so many years of studying in both majors, I can see these two subjects have completely different focuses. Unlike scientists who are concerned about the problems they are solving, we developers may focus more on the readability and performance of our codes, the portability of the final product, and its capability of handling exceptions. Therefore, when people mentioned above use *similar* to describe the relationship, they probably confuse the theories.
+After so many years of studying in both majors, I can see these two subjects have completely different focuses. Unlike scientists who are concerned about the problems they are solving, we developers always focus on the readability and performance of our codes, the portability of the final product, and its capability of handling exceptions. Therefore, when people mentioned above use *similar* to describe the relationship, they probably confuse the theories.
 
 > A real programmer does not believe these. They should have done a lot more research before drawing this conclusion!
 
