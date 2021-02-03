@@ -58,10 +58,10 @@ There are two ways of categorizing data structures. My preferred method is to or
 From the other aspect, it is much more difficult to provide a list of "essential algorithms". There are numerous algorithms in the world of computers, and the number is growing continually (the more you know, the better).
 
 That being said, exquisite algorithms you come up with by afflatus must be built upon fundamental ones - the ones that are considered classics and the ones you must be familiar with even not in a coding contest situation. Some of those are listed here:
-* Matrix Multiplication: Strassen’s algorithm - depends on the recurrence, T(n)
+* Matrix Multiplication: Strassen's algorithm - depends on the recurrence, T(n)
 * Bellman-Ford (single source, weighted graphs) - O[\|V\|\|E\|]
 * Topological Sort (directed acyclic graphs): Khan's algorithm - O[V+E]
-* Floyd–Warshall (multi-sources, weighted graphs) - O[V^3]
+* Floyd–Warshall (multi-sources, weighted graphs) - O[V<sup>3</sup>]
 * Dijkstra (single source, weighted graphs):
   - O[V+Elog(V)] in a priority-queue
   - O[E+Vlog(V)] in a Fibonacci heap

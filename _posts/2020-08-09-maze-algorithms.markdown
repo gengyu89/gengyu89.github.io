@@ -42,10 +42,10 @@ class Maze(object):
         return deepcopy(self.__walls)
     
     def InsertNode(self, node):
-        pass
+        pass  # 此处略去一些代码
     
     def SetVisited(self, vect):
-        pass
+        pass  # 此处略去一些代码
     
     def hasNode(self, vect):
         vects = [node.current for node in self.nodes]
@@ -58,13 +58,13 @@ class Maze(object):
         print("Node not found!")
     
     def SetConnected(self, vect_1, vect_2):
-        pass
+        pass  # 此处略去一些代码
     
     def SetApart(self, vect_1, vect_2):
-        pass
+        pass  # 此处略去一些代码
     
     def __str__(self):
-        pass
+        pass  # 此处略去一些代码
 
 class Node(object):
     """Data structure for representing each cell."""
@@ -91,10 +91,10 @@ class Node(object):
         return self.__neighbors  # deepcopy() removed
     
     def AddNeighbor(self, new):
-        pass
+        pass  # 此处略去一些代码
     
     def DelNeighbor(self, target):
-        pass
+        pass  # 此处略去一些代码
     
     def ListDisconnected(self):
         """Enumerates a node's unvisited neighbors."""
@@ -257,7 +257,7 @@ def drawCenters():
 
 推导时间复杂度是 CS 中较难的部分，分治方法被用于归并排序、快速排序和许多并行设计的场景。在快速排序里面，如果 `pivot` 的值和数组的最小或最大值靠得太近，就不能够很好地发挥分治方法的加速效果。
 
-类似地，假设对一个 MxN 的迷宫，`pivot` 的坐标刚好离画布的某一角有一个单元格的距离。在这种最坏的情形下，会得到一个大小为 (M-1)(N-1) 的子问题（四个子区域中最大的）。如果我们每一步递归调用都假设最坏的情况，如此继续下去，得到的时间复杂度上限为 O[(M^2)(N^2)]。用节点个数表示，那就是 O[V^2]。
+类似地，假设对一个 MxN 的迷宫，`pivot` 的坐标刚好离画布的某一角有一个单元格的距离。在这种最坏的情形下，会得到一个大小为 (M-1)(N-1) 的子问题（四个子区域中最大的）。如果我们每一步递归调用都假设最坏的情况，如此继续下去，得到的时间复杂度上限为 O[(M<sup>2</sup>)(N<sup>2</sup>)]。用节点个数表示，那就是 O[V<sup>2</sup>]。
 
 经试验，每一次分割以后，挖洞的墙壁数量不少于三个时才能保证不生成大量封闭的区域。开四个洞会形成环路，不满足 “任意两点间的路径唯一” 的要求。
 
@@ -280,7 +280,7 @@ def drawCenters():
 
 并查集在迷宫生成问题里的应用主要还是出于效率上的考虑，事实上第二点原因我目前还没遇见过。包括前面定义的迷宫类、墙类、节点类，没它们算法一样也能实现。只是那样做代码的可读性大幅降低，增加了维护成本。
 
-话虽这么说，有些时候看似最适合某个问题的数据结构，却不是最高效的实现方法（参见约瑟夫环问题）。
+话虽这么说，有些时候看似最适合某个问题的数据结构，却不是最高效的实现方法（参见[约瑟夫环问题](https://cp-algorithms.com/others/josephus_problem.html)）。
 
 一个并查集本质上就是由集合组成的列表，每一个集合需要一个父元素（可以用列表索引）方便查找。但如果不封装任何方法，全靠列表自带方法，实现起来不够优雅，定义专属的数据结构显得尤为必要。此处只提供框架：
 ```python
@@ -298,16 +298,16 @@ class DisjointSet(object):
         return self.__sets
     
     def InsertSet(self, new):
-        pass
+        pass  # 此处略去一些代码
     
     def LocateSet(self, target):
-        pass
+        pass  # 此处略去一些代码
     
     def RemoveSet(self, value):
-        pass
+        pass  # 此处略去一些代码
     
     def AreSeparated(self, v_1, v_2):
-        pass
+        pass  # 此处略去一些代码
     
     def QuickFind(self, v_1, v_2):
         i, j = None, None
@@ -319,7 +319,7 @@ class DisjointSet(object):
         raise Exception("At least one element is not found!")
     
     def JoinSets(self, v_1, v_2):
-        pass
+        pass  # 此处略去一些代码
     
     def __len__(self):
         return len(self.__sets)
