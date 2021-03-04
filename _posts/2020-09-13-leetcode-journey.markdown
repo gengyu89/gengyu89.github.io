@@ -27,7 +27,7 @@ In geological sciences or other academic fields related to scientific computatio
 
 I am wordless about those people who confuse *data analysis* and *software development*. Although programming can be easier than math or physics in most cases, it can also be much more difficult than what people see in geophysical studies. Only from doing research, they can hardly understand the true story.
 
-To answer (2), unfortunately, techniques for data processing in science do not touch the core concepts of CS quite much. Algorithms, data structures, UI design, and API development... these skills are much more considered for making a qualified software developer.
+<!-- To answer (2), unfortunately, techniques for data processing in science do not touch the core concepts of CS quite much. Algorithms, data structures, UI design, and API development... these skills are much more considered for making a qualified software developer. -->
 
 After so many years of studying in both disciplines, I can see that these two subjects have completely different focuses. As developers, we focus more on the readability and performance of our codes, the portability of the final product, and its capability of handling exceptions. Therefore, when people mentioned above use *similar* to describe the relationship, they probably confuse the theories.
 
