@@ -60,7 +60,8 @@ There are two ways of categorizing data structures. My preferred method is to or
 From the other aspect, it is much more difficult to provide a list of "essential algorithms". There are numerous algorithms in the world of computers, and the number is growing continually (the more you know, the better).
 
 That being said, exquisite algorithms you come up with by afflatus must be built upon fundamental ones - the ones that are considered classics and the ones you must be familiar with even not in a coding contest situation. Some of those are listed here:
-* Matrix Multiplication: Strassen's algorithm - depends on the recurrence, T(n)
+
+Algorithms on graphs
 * Bellman-Ford (single source, weighted graphs) - O[\|V\|\|E\|]
 * Topological Sort (directed acyclic graphs): Khan's algorithm - O[V+E]
 * Floyd–Warshall (multi-sources, weighted graphs) - O[V<sup>3</sup>]
@@ -71,6 +72,13 @@ That being said, exquisite algorithms you come up with by afflatus must be built
 * Dynamic Programming: knapsack (pseudo-polynomial), KMP (failure function), shortest editing distance, minimum coins of changes - check online for individual time complexity
 * Strongly-Connected Components (directed graphs): Kosaraju - O[V+E], O[V<sup>2</sup>] with an adjacency matrix
 * Connected Components (undirected graphs): Kosaraju - O[V+E], with post-order property preserved
+
+Algorithms on strings
+* Dynamic Programming: KMP (failure function), shortest editing distance - check online for individual time complexity
+
+Other algorithms
+* Matrix Multiplication: Strassen's algorithm - depends on the recurrence, T(n)
+* Dynamic Programming: knapsack (pseudo-polynomial), minimum coins of changes - check online for individual time complexity
 
 <!-- See reference here: https://blog.asarkar.com/algorithms-design-analysis/final/ -->
 
