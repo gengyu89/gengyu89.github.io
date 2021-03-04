@@ -35,7 +35,7 @@ After so many years of studying in both disciplines, I can see that these two su
 
 **Why are data structures and algorithms so important?**
 
-Software development, in a full life-cyle, relies on a variety of comprehensive skills. *Design patterns for solving algorithmic problems* - like many university programs taught us - are ideal abstractions of real-world problems. Merging software modules by multiple developers, compiling a legacy code and fixing incompatibility issues, or for some reason remaking an open-source library from scratch, etc. will definitely bring more pain than designing and implementing algorithms.
+Software development, in a full lifecyle, relies on a variety of comprehensive skills. *Design patterns for solving algorithmic problems* - like many university programs taught us - are ideal abstractions of real-world problems. Merging software modules by multiple developers, compiling a legacy code and fixing incompatibility issues, or for some reason remaking an open-source library from scratch, etc. will definitely bring more pain than designing and implementing algorithms.
 
 ![devops](/img/in-post/post-leetcode-journey/Devops.svg.png)
 
@@ -57,9 +57,9 @@ There are two ways of categorizing data structures. My preferred method is to or
 
 ![data_structures](/img/in-post/post-leetcode-journey/DS_Classification.jpg)
 
-From the other aspect, it is much more difficult to provide a list of "essential algorithms". There are numerous algorithms nowadays in the computer industry, and the number is growing continually. There is no silver bullet for algorithm design - no universal technique that can solve every computational problem you'll encounter. The more you know, the better.
+From the other aspect, it is much more difficult to provide a list of "essential algorithms". There is no silver bullet for algorithm design - no universal technique that can solve every computational problem you'll encounter. The more you know, the better.
 
-That being said, there are several general design paradigms that can help you solve problems from many different application domains - the ones that are considered classical and the ones you must be familiar with even not in a coding contest situation. Some of those are listed here:
+With that being said, there are several general design paradigms that can help you solve problems from many different application domains - the ones that are considered classical and the ones you must be familiar with even not in a coding contest situation. Some of those are listed here:
 
 Algorithms on graphs
 * Bellman-Ford (single source, weighted graphs) - O[\|V\|\|E\|]
