@@ -25,21 +25,23 @@ tags:
 
 In geological sciences or other academic fields related to scientific computation, a few people believe that (1) programming is less difficult compared to mathematics, physics, and the interpretation of results, and (2) the programming tasks they are doing are close to computer science (CS) or software engineering (SE), which is why I am bothering explaining the basics.
 
-Although the first statement is true for our major, programming can be much more difficult than what people see in geophysical studies. Only from doing research, they can hardly understand the true story.
+I am wordless about those people who confuse *data analysis* and *software development*. Although programming can be easier than math or physics in most cases, it can also be much more difficult than what people see in geophysical studies. Only from doing research, they can hardly understand the true story.
 
 To answer (2), unfortunately, techniques for data processing in science do not touch the core concepts of CS quite much. Algorithms, data structures, UI design, and API development... these skills are much more considered for making a qualified software developer.
 
-After so many years of studying in both disciplines, I am 100% sure that these two subjects have different focuses. Unlike scientists who are usually concerned about the problems they are solving, we developers may focus more on the readability and performance of our codes, the portability of the final product, and its capability of handling exceptions. Therefore, when people mentioned above use *similar* to describe the relationship, they probably confuse the theories.
+After so many years of studying in both disciplines, I can see that these two subjects have completely different focuses. As developers, we focus more on the readability and performance of our codes, the portability of the final product, and its capability of handling exceptions. Therefore, when people mentioned above use *similar* to describe the relationship, they probably confuse the theories.
 
-> A real programmer does not believe these. They should have done a lot more research before drawing this conclusion!
+> A real programmer does not believe these statements. They should have done a lot more research before drawing their conclusions!
 
 **Why are data structures and algorithms so important?**
 
-Software development, in real cases, relies on a variety of comprehensive skills. *Design patterns for solving algorithmic problems* - like many university programs taught us - are ideal abstractions of real-world problems. Merging software modules by multiple developers, compiling a legacy code and fixing incompatibility issues, or for some reason remaking an open-source library from scratch, etc. will definitely bring more pain than designing and implementing algorithms.
+Software development, in a full life-cyle, relies on a variety of comprehensive skills. *Design patterns for solving algorithmic problems* - like many university programs taught us - are ideal abstractions of real-world problems. Merging software modules by multiple developers, compiling a legacy code and fixing incompatibility issues, or for some reason remaking an open-source library from scratch, etc. will definitely bring more pain than designing and implementing algorithms.
 
-Nevertheless, efficiency is still one of the most difficult aspects of programming, for that reducing the execution time of a code usually requires far more knowledge than making it work. From beginning to end, challenging algorithmic questions are the main focus of most technical job interviews. It has been widely addressed that algorithm engineers are paid higher salaries than other software developers, although some do not agree with this assertion. In any case, *data structures and algorithms* are primary skills for job hunters in IT to go to their dream places (prestigious companies like Nvidia, for example).
+![devops](/img/in-post/post-leetcode-journey/Devops.svg.png)
 
-From the micro-level, concepts like *Graph Theory* and *Discrete Mathematics* used by computer scientists describe models for data storage and node relationship in computer memories, which usually results in an impact on execution efficiencies. Although this may not matter for small problems, the effect accumulates and eventually becomes significant as a project grows. Concerns about these aspects make CS/SE significantly different from other subjects that require code writing skills.
+Nevertheless, efficiency is still one of the most difficult aspects of programming, for that reducing the execution time of a code usually requires far more knowledge than making it work. From beginning to end, challenging algorithmic questions are the main focus of most technical job interviews. It has been widely addressed that algorithm engineers are paid higher salaries than other software developers, although some do not agree with this assertion. In any case, *data structures and algorithms* are primary skills for job hunters in IT to go to their dream places (big-name companies like Nvidia, for example).
+
+From the micro-level, concepts like *Graph Theory* and *Discrete Mathematics* used by computer scientists describe models for data storage and nodal relationship, which usually results in an impact on execution efficiencies. Although this may not matter for small problems, the effect accumulates and eventually becomes significant as a project grows. Concerns about these aspects make CS/SE significantly different from other subjects that require code writing skills.
 
 ![rb_tree](/img/in-post/post-leetcode-journey/Red-black_tree_example.png)
 
@@ -66,9 +68,11 @@ That being said, exquisite algorithms you come up with by afflatus must be built
   - O[V+Elog(V)] in a priority-queue
   - O[E+Vlog(V)] in a Fibonacci heap
 * Minimum Spanning Trees: Kruskal - O[E log(V)], Prim - O[E+Vlog(V)]
-* Dynamics Programming: knapsack (pseudo-polynomial), KMP (failure function), shortest editing distance, minimum coins of changes - check online for individual time complexity
-* Strongly-Connected Components (directed graphs): Kosaraju - O[V+E]
+* Dynamic Programming: knapsack (pseudo-polynomial), KMP (failure function), shortest editing distance, minimum coins of changes - check online for individual time complexity
+* Strongly-Connected Components (directed graphs): Kosaraju - O[V+E], O[V<sup>2</sup>] with an adjacency matrix
 * Connected Components (undirected graphs): Kosaraju - O[V+E], with post-order property preserved
+
+<!-- See reference here: https://blog.asarkar.com/algorithms-design-analysis/final/ -->
 
 Based on the preceding choices, optimization is quite necessary for sparse graphs, in which V is the number of vertices, and E is the number of edges. Also, note that the runtime may differ for specific problems.
 
