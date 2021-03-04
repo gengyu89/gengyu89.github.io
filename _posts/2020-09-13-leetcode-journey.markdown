@@ -57,9 +57,9 @@ There are two ways of categorizing data structures. My preferred method is to or
 
 ![data_structures](/img/in-post/post-leetcode-journey/DS_Classification.jpg)
 
-From the other aspect, it is much more difficult to provide a list of "essential algorithms". There are numerous algorithms in the world of computers, and the number is growing continually (the more you know, the better).
+From the other aspect, it is much more difficult to provide a list of "essential algorithms". There are numerous algorithms nowadays in the computer industry, and the number is growing continually. There is no silver bullet for algorithm design - no universal technique that can solve every computational problem you'll encounter. The more you know, the better.
 
-That being said, exquisite algorithms you come up with by afflatus must be built upon fundamental ones - the ones that are considered classics and the ones you must be familiar with even not in a coding contest situation. Some of those are listed here:
+That being said, there are several general design paradigms that can help you solve problems from many different application domains - the ones that are considered classical and the ones you must be familiar with even not in a coding contest situation. Some of those are listed here:
 
 Algorithms on graphs
 * Bellman-Ford (single source, weighted graphs) - O[\|V\|\|E\|]
@@ -69,11 +69,11 @@ Algorithms on graphs
   - O[V+Elog(V)] in a priority-queue
   - O[E+Vlog(V)] in a Fibonacci heap
 * Minimum Spanning Trees: Kruskal - O[E log(V)], Prim - O[E+Vlog(V)]
-* Dynamic Programming: knapsack (pseudo-polynomial), KMP (failure function), shortest editing distance, minimum coins of changes - check online for individual time complexity
 * Strongly-Connected Components (directed graphs): Kosaraju - O[V+E], O[V<sup>2</sup>] with an adjacency matrix
 * Connected Components (undirected graphs): Kosaraju - O[V+E], with post-order property preserved
 
 Algorithms on strings
+* Longest Palindromic Substring / Longest Symmetric Factor: Manacher - O[N]
 * Dynamic Programming: KMP (failure function), shortest editing distance - check online for individual time complexity
 
 Other algorithms
