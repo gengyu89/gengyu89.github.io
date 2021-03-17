@@ -25,11 +25,7 @@ tags:
 
 In geological sciences or other academic fields related to scientific computation, a few people believe that (1) programming is less difficult compared to mathematics, physics, and the interpretation of results, and (2) the programming tasks they are doing are close to computer science (CS) or software engineering (SE), which is why I am bothering explaining the basics.
 
-I am wordless about those people who confuse *data analysis* and *software development*. Although programming can be easier than math or physics in most cases, it can also be much more difficult than what people see in geophysical studies. Only from doing research, they can hardly understand the true story.
-
-<!-- To answer (2), unfortunately, techniques for data processing in science do not touch the core concepts of CS quite much. Algorithms, data structures, UI design, and API development... these skills are much more considered for making a qualified software developer. -->
-
-After so many years of studying in both disciplines, I can see that these two subjects have completely different focuses. As developers, we focus more on the readability and performance of our codes, the portability of the final product, and its capability of handling exceptions. Therefore, when people mentioned above use *similar* to describe the relationship, they probably confuse the theories.
+As a person who has been studying in both Computer Science (2010-2012) and Geophysics (2015 to now), I personally cannot agree with those people who confuse *data processing* and *software making*. Most techniques used in geophysical studies have nothing to do with software development. They can be termed *coding* rather than *programming*. As developers, we always focus more on the readability and performance of our codes, the portability of the final product, and its capability of handling exceptions. Therefore, when people mentioned above use *similar* to describe the relationship, they probably confuse the theories.
 
 > A real programmer does not believe these statements. They should have done a lot more research before drawing their conclusions!
 
