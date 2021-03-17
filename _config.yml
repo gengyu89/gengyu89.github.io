@@ -78,7 +78,7 @@ ga_domain: gengyu89.github.io
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "A fan of Donald Knuth"  # backup: C++ Haskell Java Lisp Python
+sidebar-about-description: "C++ Haskell Java Lisp Python"  # note: "A fan of Donald Knuth" is too short
 sidebar-avatar: /img/insert-2_0.png     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 

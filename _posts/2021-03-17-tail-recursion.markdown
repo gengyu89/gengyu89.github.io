@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "什么是尾递归？"
-subtitle:   "在开始学习 Lisp 的同时，我遇到了术语尾递归。到底是什么意思？"
+subtitle:   "在开始学习 Lisp 的同时，我遇到了术语“尾递归”。到底是什么意思？"
 date:       2021-03-17 12:00:00
 author:     "heapify"
 header-img: "img/home-bg.jpg"
