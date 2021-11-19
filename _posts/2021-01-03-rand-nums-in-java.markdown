@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "为什么说 Java 中的随机数都是伪随机数？"
+title:      "为什么 Java 中的随机数都是伪随机数？"
 subtitle:   "为什么说 Java 中的随机数都是伪随机数？ - GreatAnt - 博客园"
 date:       2021-01-03 12:00:00
 author:     "heapify"

@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "为什么牛逼的程序员都不用`!= null`做判空？"
-subtitle:   ""
+title:      "为什么不建议用`!= null`做判空？"
+subtitle:   "牛逼的程序员都不用`!= null`做判空"
 date:       2021-08-23 12:00:00
 author:     "heapify"
 header-img: "img/home-bg.jpg"

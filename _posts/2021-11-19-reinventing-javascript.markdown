@@ -22,7 +22,7 @@ tags:
 
 大家总会把 TypeScript 和其他语言去做对比，说它是在模仿 Java 或 C#，我也曾一度相信了这种说法。但其实并非如此，TypeScript 的类型系统和工作机制是如此的独特，无法简单地描述成是在模仿哪一个语言，更像是在 JavaScript 的基础上重新发明了 JavaScript。
 
-究其根本，TypeScript 并不是一个全新的语言，它是在一个已有的语言 —— 还是一个非常灵活的动态类型语言上添加静态约束。在官方 Wiki 上的 TypeScript Design Goals 中有提到，TypeScript 并不是要从 JavaScript 中抽取出一个具有静态化语义的子集，而是要尽可能去支持之前社区中已有的编程范式，避免与常见的用法产生不兼容。
+究其根本，TypeScript 并不是一个全新的语言，它是在一个已有的语言 —— 还是一个非常灵活的动态类型语言上添加静态约束。在官方 Wiki 上的 [TypeScript Design Goals](https://github.com/microsoft/TypeScript/wiki/TypeScript-Design-Goals) 中有提到，TypeScript 并不是要从 JavaScript 中抽取出一个具有静态化语义的子集，而是要尽可能去支持之前社区中已有的编程范式，避免与常见的用法产生不兼容。
 
 这意味着 TypeScript 试图为 JavaScript 已有的大量十分「动态」的特性去提供静态语义。一般认为「静态类型」的标志是在编译时为变量确定类型，但 TypeScript 很特殊，因为 JavaScript 本身的动态性，TypeScript 中的类型更像是一种「约束」，它尊重已有的 JavaScript 设计范式，同时尽可能添加一点静态约束 —— 这种约束不会影响到代码的表达能力。或者说，TypeScript 会以 JavaScript 的表达能力为先、以 JavaScript 的运行时行为为先，而静态约束则次之。
 
@@ -36,7 +36,7 @@ tags:
 
 例如 request 这个库会要求使用者将发起请求的所有参数一股脑地以一个对象的形式作为参数传入。这就是非常典型的 JavaScript 风格。再比如 JavaScript 中一个 Promise 对象只需有 then 和 catch 这两个实例方法就可以，而并不真的需要真的来自标准库中的 Promise 构造器，实际上也有很多第三方的 Promise 的实现，或一些返回类 Promise 对象的库（例如一些 ORM）。
 
-在 JavaScript 中我们通常只关注一个对象是否有我们需要的属性和方法，这种范式被称为「鸭子类型（Duck typing）」，就是说「当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子」。
+在 JavaScript 中我们通常只关注一个对象是否有我们需要的属性和方法，这种范式被称为「[鸭子类型](https://zh.wikipedia.org/wiki/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B)（Duck typing）」，就是说「当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子」。
 
 所以 TypeScript 选择了一种基于属性的类型系统（Structural type system），这种类型系统不再关注一个变量被标称的类型（由哪一个构造器构造），而是 在进行类型检查时，将对象拆开，抽丝剥茧，逐个去比较组成这个对象的每一个不可细分的成员。如果一个对象有着一个类型所要求的所有属性或方法，那么就可以当作这个类型来使用。
 
@@ -128,9 +128,9 @@ const b: Partial<Person> = {}
 ```
 前面我们提到的 Pick 和 Extract 都是这样的泛型类型。
 
-在此之外 TypeScript 甚至可以在定义泛型类型时进行条件判断和递归，这使得 TypeScript 的类型系统变成了 图灵完备的，可以在编译阶段进行任何计算。
+在此之外 TypeScript 甚至可以在定义泛型类型时进行条件判断和递归，这使得 TypeScript 的类型系统变成了 [图灵完备](https://github.com/microsoft/TypeScript/issues/14833) 的，可以在编译阶段进行任何计算。
 
-你可能会怀疑这样复杂的类型真的有用么？其实这些特性更多地是提供给库开发者使用的，对于 JavaScript 社区中的 ORM、数据结构，或者是 lodash 这样的库来说，如此强大的类型系统是非常必要的，lodash 的 类型定义 行数甚至是它本身代码的几十倍。
+你可能会怀疑这样复杂的类型真的有用么？其实这些特性更多地是提供给库开发者使用的，对于 JavaScript 社区中的 ORM、数据结构，或者是 lodash 这样的库来说，如此强大的类型系统是非常必要的，lodash 的 [类型定义](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/lodash) 行数甚至是它本身代码的几十倍。
 
 ##### 类型方程式：自动推导
 
@@ -162,7 +162,7 @@ const a = getProperty({a: 2}, 'a')
 
 ##### 价值十亿美金的错误
 
-在很多语言中访问空指针都会报出异常（在 JavaScript 中是从 null 或 undefined 上读取属性时），空指针异常被称为「价值十亿美元的错误」。TypeScript 则为空值检查也提供了支持（需开启 strictNullChecks），虽然这依赖于类型定义的正确性，并没有运行时的保证，但依然可以提前在编译期发现大部分的错误，提高开发效率。
+在很多语言中访问空指针都会报出异常（在 JavaScript 中是从 null 或 undefined 上读取属性时），空指针异常被称为「[价值十亿美元的错误](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)」。TypeScript 则为空值检查也提供了支持（需开启 strictNullChecks），虽然这依赖于类型定义的正确性，并没有运行时的保证，但依然可以提前在编译期发现大部分的错误，提高开发效率。
 
 TypeScript 中的类型是不可为空（undefined 或 null）的，对于可空的类型必须表示成和 undefined 或 null 的并集类型，这样当你试图从一个可能为 undefined 的变量上读取属性时，TypeScript 就会报错了。
 ```typescript
@@ -247,6 +247,17 @@ LeanCloud 的一些内部工具和边缘服务也会优先考虑 TypeScript，�
 
 LeanCloud 的 JavaScript SDK、Node SDK 和 Play SDK 都添加了 TypeScript 的定义文件（并且打算在之后的版本中使用 TypeScript 改写），让使用 LeanCloud 的开发者可以在 TypeScript 中使用 SDK，即使不用 TypeScript，定义文件也可以帮助编辑器来改进代码补全和类型提示。
 
-如果你也希望一起来完善这些项目，可以了解一下在 LeanCloud 的 工作机会。
+如果你也希望一起来完善这些项目，可以了解一下在 LeanCloud 的 [工作机会](https://www.leancloud.cn/jobs/)。
+
+参考资料：
+* [TypeScript Evolution](https://mariusschulz.com/blog/series/typescript-evolution)
+* [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)（[中文版](https://jkchao.github.io/typescript-book-chinese/)）
+* [TypeScript Design Goals](https://github.com/Microsoft/TypeScript/wiki/TypeScript-Design-Goals)
+* [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+* [浅谈 TypeScript 类型系统](https://zhuanlan.zhihu.com/p/64446259)
+* [TypeScript类型元编程：实现8位数的算术运算](https://zhuanlan.zhihu.com/p/85655537)
+* [编程的智慧](https://www.yinwang.org/blog-cn/2015/11/21/programming-philosophy)（正确处理 null 指针）
+* [The worst mistake of computer science](https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/)（[中文版](https://www.open-open.com/news/view/16166e1)）
+转载时更正了格式与标点方面的错误
 
 <span style="color:gray"> 发布于 2020-06-10 14:57 </span>
