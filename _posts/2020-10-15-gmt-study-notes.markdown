@@ -10,8 +10,8 @@ tags:
     - Generic Mapping Tools
     - OS X
     - Terminal
-    - scripting
-    - bash
+    - PostScript
+    - Ghostview
 ---
 
 **Timeline**

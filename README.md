@@ -25,4 +25,5 @@
   2. Type `http://localhost:4000` in your browser
 
 **Release**
-  - Please always use "highly insultive" as commitment messages
+  - Always use "highly insultive" as the commitment message
+  - Command for pushing updates: 'git push https://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@github.com/gengyu89/gengyu89.github.io.git/'

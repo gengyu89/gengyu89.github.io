@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "TypeScript：重新发明一次 JavaScript"
+title:      "重新发明一次 JavaScript"
 subtitle:   "TypeScript：重新发明一次 JavaScript - 知乎"
 date:       2021-11-19 12:00:00
 author:     "heapify"
@@ -48,7 +48,7 @@ interface LabeledValue {
 ```
 TypeScript 并不关心 Interface 本身的名字，与其说是「类型」，它更像是一种约束。一个对象只要有一个字符串类型的 label 属性，就可以说它满足了 LabeledValue 的约束。它可以是一个其他类的实例、可以是字面量、可以有额外的属性；只要它满足 LabeledValue 所要求的属性，就可以被赋值给这个类型的变量、传递给这个类型的参数。
 
-前面提到 Interface 实际上是一组属性或一组约束的集合，说到集合，当然就可以进行交集、并集之类的运算。例如type C = A & B 表示 C 需要同时满足类型 A 和类型 B 的约束，可以简单地实现类型的组合；而 type C = A | B 则表示 C 只需满足 A 和 B 任一类型的约束，可以实现联合类型（Union Type）。
+前面提到 Interface 实际上是一组属性或一组约束的集合，说到集合，当然就可以进行交集、并集之类的运算。例如type C = A & B 表示 C 需要同时满足类型 A 和类型 B 的约束，可以简单地实现类型的组合；而 type C = A \| B 则表示 C 只需满足 A 和 B 任一类型的约束，可以实现联合类型（Union Type）。
 
 接下来我会挑选一些 TypeScript 具有代表性的一些特性进行介绍，它们之间环环相扣，十分精妙。
 

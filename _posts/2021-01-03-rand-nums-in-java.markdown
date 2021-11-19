@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "为什么说Java中的随机数都是伪随机数？"
-subtitle:   "为什么说Java中的随机数都是伪随机数？ - GreatAnt - 博客园"
+title:      "为什么说 Java 中的随机数都是伪随机数？"
+subtitle:   "为什么说 Java 中的随机数都是伪随机数？ - GreatAnt - 博客园"
 date:       2021-01-03 12:00:00
 author:     "heapify"
 header-img: "img/home-bg.jpg"
@@ -28,7 +28,7 @@ Java自带的随机数函数是很容易被黑客破解的,因为黑客可以通
 #### 不用种子的不随机性会增大的原因：
 `java.Math.Random()`实际是在内部调用`java.util.Random()`的,使用一个和当前系统时间有关的数字作为种子数。两个随机数就很可能相同。
 ```java
-double a = Math.random()；
+double a = Math.random();
 double b = Math.random();
 Random r1 = new Random();
 r1.nextInt(10);
