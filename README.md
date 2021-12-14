@@ -25,5 +25,5 @@
   2. Type `http://localhost:4000` in your browser
 
 **Release**
-  - Command for pushing: `git push https://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@github.com/gengyu89/gengyu89.github.io.git/`
+  - Command for pushing: `git push https://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@github.com/gengyu89/gengyu89.github.io.git/`
   - Please always use "highly insultive" for commitments
