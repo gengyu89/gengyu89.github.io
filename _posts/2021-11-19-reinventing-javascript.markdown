@@ -259,6 +259,6 @@ LeanCloud 的 JavaScript SDK、Node SDK 和 Play SDK 都添加了 TypeScript 的
 * [编程的智慧](https://www.yinwang.org/blog-cn/2015/11/21/programming-philosophy)（正确处理 null 指针）
 * [The worst mistake of computer science](https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/)（[中文版](https://www.open-open.com/news/view/16166e1)）
 
-转载时更正了格式与标点方面的错误
+<!-- 转载时更正了格式与标点方面的错误 -->
 
 <span style="color:gray"> 发布于 2020-06-10 14:57 </span>
